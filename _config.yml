@@ -1,15 +1,14 @@
 # Site settings
-title: My Territory
-blog_title: My Territory
+title: Jane Ruby
+blog_title: Jane Ruby
 header-img: img/home-bg.jpg
-email: root@shikherverma.com
-copyright_name: ShikherVerma
-description: "Online Territory of Shikher Verma"
-baseurl: "" #base url is for when the site is not at the root but at some subdirectory.
-url: http://shikherverma.com #only used in disque comments for now
-disqus_url: shikherverma.com # disque comments are broken if you send http:// along with url
-github_username:  shikherverma
-facebook_username:  shikherverma1
+email: jane.rubies@gmail.com
+description: "Android Developer | UX Designer"
+# baseurl: "" #base url is for when the site is not at the root but at some subdirectory.
+# url: http://shikherverma.com #only used in disque comments for now
+# disqus_url: shikherverma.com # disque comments are broken if you send http:// along with url
+github_username:  Jane Ruby
+# facebook_username:  shikherverma1
 collections:
   - portfolio
 
