@@ -56,8 +56,8 @@ Time (s) | i5 CPU% | rpi CPU%
 
 ## NUC who?
 Intel *N*ext *U*nit of *C*omputing is a 64 bit motherboard + Processor kit. Along with it you will have to buy Ram and SSD. For anyone looking to upgrade their robot's cpu I suggest buying Intel NUC NUC5i7RYH.  
-Buying it : [NUC](http://www.amazon.in/intel-core-i7-NUC5i7RYH-kit/dp/B00WAS1FX6?tag=googinhydr18418-21)  
-Mandatory Accessories to Buy: [RAM](http://www.amazon.in/Kingston-RAM-LAPTOP-1600MHZ-PC3L/dp/B00CQ35HBQ/ref=pd_bxgy_147_3?ie=UTF8&refRID=0WM2SPDHFSSG4FR3BZ88) [SSD](http://www.amazon.in/CRUCIAL-250-GB-SATA-CT250MX200SSD6/dp/B00RZ6GO98/ref=pd_bxgy_147_2?ie=UTF8&refRID=0WM2SPDHFSSG4FR3BZ88)  
+Buying it : [NUC](http://www.amazon.com/s?url=search-alias%3Daps&field-keywords=intel-NUC-kit)  
+Mandatory Accessories to Buy: [RAM](http://www.amazon.com/Kingston-RAM-LAPTOP-1600MHZ-PC3L/dp/B00CQ35HBQ/ref=pd_bxgy_147_3?ie=UTF8&refRID=0WM2SPDHFSSG4FR3BZ88) [SSD](http://www.amazon.in/CRUCIAL-250-GB-SATA-CT250MX200SSD6/dp/B00RZ6GO98/ref=pd_bxgy_147_2?ie=UTF8&refRID=0WM2SPDHFSSG4FR3BZ88)  
 Information links : [Product Brief](http://www.intel.com/content/www/us/en/nuc/nuc-kit-nuc5i7ryh-brief.html) [Product Overview](http://www.intel.com/content/www/us/en/nuc/nuc-kit-nuc5i7ryh.html)  
 Powering it : [forum discussion](http://forums.trossenrobotics.com/showthread.php?6316-Intel-NUC&s=366a85b68bb5d63dcf80397b0c52fe94&p=59110#post59110) [Voltage Regulator](http://www.amazon.com/dp/B008FLE7PA/ref=pe_385040_30332190_pe_175190_21431760_M3T1_ST1_dp_1)  
 Integrating RAM and MiniSSD: [video](https://www.youtube.com/watch?v=SU4cdMm-8Qc)
