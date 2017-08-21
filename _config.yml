@@ -1,5 +1,6 @@
 # Site settings
 title: My Territory
+default_author: Shikher Verma
 description: "Online Territory of Shikher Verma"  # used in site head
 
 # register on google analytics and replace this token
@@ -41,4 +42,4 @@ paginate: 5
 paginate_path: blog/page:num
 
 # gem dependencies
-gems: [jekyll-paginate, jekyll-feed, jekyll-gist]
+plugins: [jekyll-paginate, jekyll-feed, jekyll-gist]
