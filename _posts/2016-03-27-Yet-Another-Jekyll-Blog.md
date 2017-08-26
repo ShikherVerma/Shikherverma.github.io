@@ -33,12 +33,12 @@ If you are (lazy like me) and don't want to write CSS, HTML & Javascript for fro
 Or you can take the middle path and choose a HTML template. Make a jekyll theme out of it like me. Some of the best places to find them are :
 
 * [Html5Up](https://html5up.net/)
-* [StartBootstrap](https://startbootstrap.com/template-overviews/clean-blog/)
+* [StartBootstrap](https://startbootstrap.com/)
 
 I chose [Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/) because I wanted a plain old fashion website. Most of the jekyll templates I found were too funky for my taste. Bright colors, unconventional navigation patterns.
 
 
-![Clean Blog](https://startbootstrap.com/img/templates/clean-blog.jpg)
+![Clean Blog](https://startbootstrap.com/assets/img/templates/clean-blog.jpg)
 
 ### B.Hosting
 
