@@ -6,7 +6,7 @@ date: 2017-08-06 22:40:45
 author: "Shikher Verma"
 header-img: "img/posts/monitor-bg.jpg"
 comments: true
-tags: [ Life, CodeMonkey ]
+tags: [ CodeMonkey ]
 ---
 
 # Setting up Display Link USB monitor on Arch Linux
