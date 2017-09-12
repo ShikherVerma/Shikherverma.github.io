@@ -60,15 +60,25 @@ public class MainActivity extends Activity {
 
 Set a break point at `ButterKnife.bind(this);` and launch the app with `Debug Run` (shortcut Shift+F9).  The control flow will hit your breakpoint as soon as the app is launched.
 
-![Break point](/img/posts/screenshot_1.jpg)
+![Break point](/img/posts/android-studio-screenshot-1.jpg)
 
-Lets investigate what is happening here. Press the step into button (the blue arrow pointing to lower right). `ButterKnife.java` file will open up. The execution will be at the initialization of a static variable `debug`. Its not clear what this variable is but lets proceed. Press the step over button (left of step into button) since stepping into the initialization is meaningless. Next we hit the initialization of a `LinkedHashMap` of Class to Constructors, called `BINDINGS`. Again we don't yet know what this is being used for. Press the step over button. Execution goes to the source code of `bind` function :
-```
-public static Unbinder bind(@NonNull Activity target) {
-  View sourceView = target.getWindow().getDecorView();
-  return createBinding(target, sourceView);
-}
-```
+Lets investigate what is happening here. Press the step into button (the blue arrow pointing to lower right). `ButterKnife.java` file will open up.
+
+![Debugger options](/img/posts/android-studio-screenshot-2.jpg)
+
+The execution will be at the initialization of a static variable `debug`. Its not clear what this variable is but lets proceed.
+
+![Hit debug variable](/img/posts/android-studio-screenshot-3.jpg)
+
+Press the step over button (left of step into button) since stepping into the initialization is meaningless.
+Next we hit the initialization of a `LinkedHashMap` of Class to Constructors, called `BINDINGS`.
+
+![Hit BINDINGS variable](/img/posts/android-studio-screenshot-4.jpg)
+
+Again we don't yet know what this is being used for. Press the step over button. Execution goes to the source code of `bind` function :
+
+![bind function source](/img/posts/android-studio-screenshot-5.jpg)
+
 Use `Ctrl+Q` to read documentation for a function after pointing caret (keyboard blinky thing) at the function name. Or you can use `Ctrl+LeftClick` to jump to source code. If you read the documentation for `getWindow` and `getDecorView` its pretty clear that `sourceView` is the root view of the `target` activity. Press the step over button to go to the `return` line. We don't know what `createBinding` is doing. All we can guess is that it is returning a `Unbinder` object since our current `bind` function is supposed to return that. Step into the `createBinding` function using the step into button. This is the source for the `createBinding` function :
 ```
 private static Unbinder createBinding(@NonNull Object target, @NonNull View source) {
@@ -107,7 +117,7 @@ private static Constructor<? extends Unbinder> findBindingConstructorForClass(Cl
 ```
 Lets read this function and try to understand what is happening. In first line, we called `get(cls)` function from the `BINDINGS` map that we created earlier. Next, the `if` block logs `HIT...` if the last statement returned something.  Stepped over to next line. Aha! so the `BINDINGS` map is a cache. Since this is the first time this function is called, the cache was empty. Next it `returns null` if the class name starts with `android.` or `java.`. Hmm, weird. Why would the class name include these package names. Anyways stepping over. It tries to initialize a new `bindingClass` with our current class name + `_ViewBinding`. I don't remember creating any `MainActivity_ViewBinding` class. But on stepping over the variables tab of debugger shows me that it found a class by that name! We can click the `Navigate` grey text next to the variable to go to the source of that class.
 
-![Navigate button](/img/posts/screenshot_2.jpg)
+![Navigate button](/img/posts/android-studio-screenshot-6.jpg)
 
 Stepping over until this function is finished causes the constructor of this class to be cached in `BINDINGS` and returned. Even though the `catch` block was never hit, it reveals some interesting information. If the class wasn't found, this function calls itself with the super class of the current class with which this function was called. So effectively this is a recursive function which goes higher up in hierarchy until it finds a binding class. That's why we had the check of classes who are in `android.` or `java.` package. That was the base case of this recursive function. No idea why this was done, maybe different android versions or some phone manufacturers modified the default android behavior so this hack had to be used. This is another good side effect of reading the source code. "Sometimes, the documentation isn't complete. Sometimes, it's wrong. The source code never lies" - codinghorror.
 
@@ -166,36 +176,16 @@ Its unlikely that this class was a part of the ButterKnife library since I can e
 SampleApplication/app/build/generated/source/apt/debug/com/shikherverma/sampleapplication/MainActivity_ViewBinding.java
 ```
 So our guess was right. This is a generated class, whose source code is present in `app/build/generated/sources/apt/`. We will come back to this later. Lets finish our debug break point work. Step over until you are out of this class and back in `createBinding`. Stepping over takes you back to the original `bind` function that we called and stepping over yet again brings you back to your `MainActivity`. You can click `Resume Program` button now and interact with the live app. After finding out what the current epoch time is via the running app, lets get back to analyzing what this `MainActivity_ViewBinding.java` is and how it was created. All we know at this point is that this class extends `Unbinder`, is auto generated by ButterKnife and is in the `app/build/generated/sources/apt/` folder. The `app/build/generated/sources` folder contains 5 folders; `aidl`, `apt`, `buildConfig`, `r`, `rs`. I utilized my google ninja skills and search `android generated source <fill name here> folder` for each of these folders. The `aidl` is for Android Interface Definition Language, it is some sort of android interprocess communication. The `r` folder contains R.java file, which is the bridge between Java land and xml land. `buildConfig` contains info about the build variants. No idea what `rs` is for. If any of you know, please enlighten me in the comments! `apt` stands for Annotations Processing Tool. What is an annotation ? `@Override` is an annotation! Anyone who has doing android programming has used it, regardless of whether they knew what it was. It turns out java has an option to add custom annotations, which is how Butterknife provides `@BindView` and `@OnClick` annotations. Lets jump to the source code of these custom annotations and try to understand them. Use `Ctrl+LeftClick` to jump to source code. This is the source code of `@BindView`:
-```
-package butterknife;
 
-import android.support.annotation.IdRes;
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
+![BindView source](/img/posts/android-studio-screenshot-7.jpg)
 
-import static java.lang.annotation.ElementType.FIELD;
-import static java.lang.annotation.RetentionPolicy.CLASS;
-
-/**
- * Bind a field to the view for the specified ID. The view will automatically be cast to the field
- * type.
- * <pre><code>
- * {@literal @}BindView(R.id.title) TextView title;
- * </code></pre>
- */
-@Retention(CLASS) @Target(FIELD)
-public @interface BindView {
-  /** View ID to which the field will be bound. */
-  @IdRes int value();
-}
-```
 A little bit of googling reveals that :
 
-@interface tells java compiler that this is a custom annotation.
+`@interface` tells java compiler that this is a custom annotation.
 
-@Target tells what this annotation is supposed to annotate. `FIELD` means it can only be used to annotate variables. Not functions or classes. But why stop here. Jump to the source of this `FIELD` variable. It turns out this `FIELD` variable is a enum. You can see other things that an annotation can annotate by reading the other values of this enum. 
+`@Target` tells what this annotation is supposed to annotate. `FIELD` means it can only be used to annotate variables. Not functions or classes. But why stop here. Jump to the source of this `FIELD` variable. It turns out this `FIELD` variable is a enum. You can see other things that an annotation can annotate by reading the other values of this enum. 
 
-@Retention tells how the annotation is stored. You can jump to the source code to checkout other options.
+`@Retention` tells how the annotation is stored. You can jump to the source code to checkout other options.
 
 Hmm, this still doesn't tell us how this annotation is used to generate the ViewBinding class.
 
@@ -223,46 +213,12 @@ So `compile` and `annotationProcessor` are different configurations. `compile` t
 Now we know that `com.jakewharton:butterknife-compiler:8.8.1` is responsible for processing the annotations. Gradle downloads the dependencies to `/home/$USER/.gradle/` directory. Using `find . -type d -name butterknife-compiler` find that the library is downloaded to `.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-compiler/8.8.1/b2f4505a1babb7b7c11abbbf8ea4c90b18c3aeac/butterknife-compiler-8.8.1.jar`. But this is the compiled jar not the source code. The source code is available at `https://github.com/JakeWharton/butterknife/tree/master/butterknife-compiler`
 Lets read the whole source code top to bottom since we are unable to set break points and step through the code while it is running.
 
-```
-$ tree ~/AndroidStudioProjects/butterknife/butterknife-compiler
-.
-├── build.gradle
-├── gradle.properties
-└── src
-    ├── main
-    │   └── java
-    │       └── butterknife
-    │           └── compiler
-    │               ├── BindingSet.java
-    │               ├── ButterKnifeProcessor.java
-    │               ├── FieldAnimationBinding.java
-    │               ├── FieldCollectionViewBinding.java
-    │               ├── FieldDrawableBinding.java
-    │               ├── FieldResourceBinding.java
-    │               ├── FieldTypefaceBinding.java
-    │               ├── FieldViewBinding.java
-    │               ├── Id.java
-    │               ├── MemberViewBinding.java
-    │               ├── MethodViewBinding.java
-    │               ├── Parameter.java
-    │               ├── QualifiedId.java
-    │               ├── ResourceBinding.java
-    │               └── ViewBinding.java
-    └── test
-        └── java
-            └── butterknife
-                └── compiler
-                    └── BindingSetTest.java
+![Tree butterknife compiler](/img/posts/android-studio-screenshot-8.jpg)
 
-9 directories, 18 files
-```
 The `build.gradle` and `gradle.properties` are the gradle files for this project and `src/test` directory is for java unit testing code. The `src/main` is the directory we are interested in. After reading a bit about annotation processor (read http://hannesdorfmann.com/annotation-processing/annotationprocessing101) I discover that every annotation processor class `extends AbstractProcessor` and is annotated with `@AutoService(Processor.class)`. Let search which class extends from `AbstractProcessor`.
-```
-# cd ~/AndroidStudioProjects/butterknife/butterknife-compiler/src/main/java/butterknife/compiler/
-# grep -nr "AbstractProcessor" .
-./ButterKnifeProcessor.java:59:import javax.annotation.processing.AbstractProcessor;
-./ButterKnifeProcessor.java:89:public final class ButterKnifeProcessor extends AbstractProcessor {
-```
+
+![grep abstract processor](/img/posts/android-studio-screenshot-9.jpg)
+
 The class `ButterKnifeProcessor` is the one which analyses the annotations. `process()` function of the `AbstactProcessor` is supposed to process the file. Lets read the `process()` funtion in `ButterKnifeProcessor` to find out how it is generating the file.
 ```
 @Override public boolean process(Set<? extends TypeElement> elements, RoundEnvironment env) {
@@ -273,7 +229,7 @@ The first line calls `findAndParseTargets` which as the name suggests should ret
 ```
   private Map<TypeElement, BindingSet> findAndParseTargets(RoundEnvironment env) {
     Map<TypeElement, BindingSet.Builder> builderMap = new LinkedHashMap<>();
-	...
+    ...
     // Process each @BindAnim element.
     for...
     ...
