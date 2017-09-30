@@ -13,14 +13,14 @@ disqus_id: shikherverma
 feedburner_url: https://feedburner.google.com/fb/a/mailverify?uri=programmer-wannabe&amp;loc=en_US
 
 # footer details. Deleting the value would remove it from footer.
-github_username:  shikherverma
+github_username:  juuminjun
 facebook_username:  shikherverma42
 email: root@shikherverma.com
 stackoverflow_username: 6764571/shikher-verma
-twitter_username : shikherverma42
-linkedin_username : shikherverma42
-keybase_username : shikherverma
-copyright_name: Shikher Verma
+#twitter_username : shikherverma42
+#linkedin_username : shikherverma42
+#keybase_username : shikherverma
+copyright_name: copyright name Area
 rss : true
 
 # used for portfolio on home page
