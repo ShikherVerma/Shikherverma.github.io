@@ -6,8 +6,8 @@ date: 2017-10-1 02:17:45
 author: "minjun author area"
 header-img: "img/posts/monitor-bg.jpg"
 comments: true
-tags: [swift]
+tags: [Swift]
 ---
 
-swift!
+Swift!
 
