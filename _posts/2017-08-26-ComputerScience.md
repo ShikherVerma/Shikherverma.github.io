@@ -6,7 +6,7 @@ date: 2017-08-26 13:36:40
 author: "컴퓨터 공학 "
 header-img: "img/posts/android-bg.jpg"
 comments: true
-tags: [컴퓨터 공학]
+tags: [ComputerScience]
 ---
 ㅁㅁㅁㅁㅁㅁㅁ 한글 테스트
 
