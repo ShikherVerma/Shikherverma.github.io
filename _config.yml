@@ -21,7 +21,7 @@ stackoverflow_username: https://stackoverflow.com/users/8601335/minjun-ju
 #linkedin_username : shikherverma42
 #keybase_username : shikherverma
 copyright_name: MJ.Dev
-rss : true
+rss : false
 
 # used for portfolio on home page
 collections:
