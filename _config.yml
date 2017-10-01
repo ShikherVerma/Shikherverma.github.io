@@ -7,10 +7,10 @@ description: "Hello World"  # used in site head
 google_analytics: UA-75681059-1
 # disque comments are broken if you send http:// along with url, this url is same as the one given on disqus
 # Deleting the value would remove it from footer.
-disqus_url: disqus.com/by/minjunju
-disqus_id: minjunju
+disqus_url: disqus.com/by/minjunju 
+disqus_id: minjujublog
 # register on feedburner and replace this url. Deleting the value will remove it from footer.
-feedburner_url: https://feedburner.google.com/fb/a/mailverify?uri=programmer-wannabe&amp;loc=en_US
+feedburner_url: #https://feedburner.google.com/fb/a/mailverify?uri=programmer-wannabe&amp;loc=en_US
 
 # footer details. Deleting the value would remove it from footer.
 github_username:  juuminjun
