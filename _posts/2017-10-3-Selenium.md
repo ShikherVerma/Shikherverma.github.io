@@ -76,7 +76,7 @@ driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
 
  - 네이버 접속 화면
  
-![screen](/img/posts/naverLogin/jpg)
+![screen](/img/posts/naverLogin.jpg)
 
 > 위의 코드를 작성하고 실행 하면, 자동으록 로그인 하는것을 확인 할수 있다.
 
