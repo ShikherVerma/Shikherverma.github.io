@@ -39,7 +39,7 @@ Selenium은 webdriver라는 것을 통해 디바이스에 설치된 브라우저
 
 *저는 환경구성을 잘못한 탓인지, IDLE 에서는 import 가 되지 않았는데, jupyter notebook 에서는 잘 실행됬습니다..*
 
-Selenium은 webdriver api를 통해서 브라우저를 제어 합니다. 우선 webdriver를 import해주자.
+Selenium은 webdriver api를 통해서 브라우저를 제어 합니다. 우선 webdriver를 import를 해줍니다.
 
 ```python
 
@@ -65,7 +65,7 @@ driver.implicitly_wait(3)
 driver.find_element_by_name('id').send_keys('naver_id')
 driver.find_element_by_name('pw').send_keys('password')
 
-# 로그인 버튼을 클릭해줌
+# 로그인 버튼을 클릭 해줍니다.
 
 driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
 
@@ -74,11 +74,11 @@ driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
 
 ```
 
- - 네이버 접속 화면
+ - 네이버 접속 화면(위의 URL 을 한번 확인해 보자.)
  
 ![screen](/img/posts/naverLogin.jpg)
 
-> 위의 코드를 작성하고 실행 하면, 자동으록 로그인 하는것을 확인 할수 있다.
+> 위의 코드를 작성하고 실행 하면, 자동으록 로그인 하는것을 확인 할수 있습니다.
 
 
 
@@ -108,7 +108,7 @@ btn = 0
 # naver 에서 검색값 id = query
 query = driver.find_element_by_id("query") 
  
-# 검색창에 적어 주는것  
+# 검색창에 적어 줍니다.  
 query.send_keys("MJ.Dev") 
 
 # 검색하기 전 5초를 기다린다 
