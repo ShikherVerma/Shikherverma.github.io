@@ -38,3 +38,6 @@ UNICODE : 2 byte (2의 16승 : 65,536가지 문자)
 > UNICODE 는 ASCII의 확장판입니다. 잘 보면, 아직 모두 채워지지 않았는데, 외계인의 언어도 넣기 위해서 비워 놨다고 합니다....ㅎㅎㅎㅎㅎ
  
 
+## Reference
+
+[CODE: 하드웨어와 소프트웨어 숨어있는 언어 - 찰스 펫졸드](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=7781601)
