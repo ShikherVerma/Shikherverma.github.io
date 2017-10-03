@@ -4,7 +4,7 @@ title:      "Selenium 으로 Crawling 하기 "
 subtitle:   "Selenium 으로 슈퍼 크롤러 되기."
 date:       2017-10-03 02:03:00
 author:     "MinJun"
-header-img: "img/tags/ComputerScience1-bg.jpg"
+header-img: "img/tags/Python-bg.jpg"
 comments: true
 tags: [Python]
 ---
