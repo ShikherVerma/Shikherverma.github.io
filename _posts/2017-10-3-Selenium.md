@@ -12,9 +12,9 @@ tags: [Python]
 
 ## 준비물 
 
-- Python3, Selenium, ChromeWebDriver(다른 브라우져에서 사용하는 해당 브라우져 드라이브를 사용하면 됩니다. 저는 chrome드라이브를 사용했습니다.)
+- Python3, Selenium, ChromeWebDriver(다른 브라우저에서 사용하고 싶다면, 해당 브라우져 드라이브를 사용하면 됩니다. 저는 chrome드라이브를 사용했습니다.)
 
-**[how to install Python](/img/posts/How-to-install-python.pdf)**
+**[how to install Python Reference: https://github.com/ulgoon](/img/posts/How-to-install-python.pdf)**
 
 ## Selenium 사용 환경 구성 하기
 
