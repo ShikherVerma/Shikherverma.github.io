@@ -41,5 +41,11 @@ permalink: /blog/:title
 paginate: 5
 paginate_path: blog/page:num
 
+
 # gem dependencies
 plugins: [jekyll-paginate, jekyll-feed, jekyll-gist]
+
+# search_google
+
+google-site-verification: google584dc7a5a28f263d.html
+
