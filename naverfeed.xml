@@ -1,32 +1,118 @@
-{% raw %}
----
-layout: null  
----
-<?xml version="1.0" encoding="UTF-8"?>  
-<feed xmlns="http://webmastertool.naver.com">  
-  <id>{{ site.url }}</id>
-  <title><![CDATA[ {{ site.title | xml_escape }} ]]></title>
-  <author>
-    <name>{{ site.author.name | xml_escape }}</name>
-    <email>{{ site.author.email }}</email>
-  </author>
+<?xml version="1.0"?>  
+<xs:schema  
+    xmlns="http://webmastertool.naver.com"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://webmastertool.naver.com"
+    elementFormDefault="qualified">
 
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <link rel="site" href="{{ site.url }}" />
+    <xs:annotation>
+        <xs:documentation>
+            elements for syndication
+        </xs:documentation>
+    </xs:annotation>
 
-  {% for post in site.posts limit:20 %}
-  <entry>
-    <id>{{ site.production_url }}{{ post.id }}</id>
-    <title><![CDATA[ {{ post.title | xml_escape }} ]]></title>
-    <author>
-      <name>{{ site.author.name | xml_escape }}</name>
-      <email>{{ site.author.email }}</email>
-    </author>
-    <updated>{{ post.date | date_to_xmlschema }}</updated>
-    <published>{{ post.date | date_to_xmlschema }}</published>
-    <link rel="via" href="{{ site.url }}{{ post.url }}" />
-    <content type="html"><![CDATA[  {{ post.content | xml_escape }} ]]></content>
-  </entry>
-  {% endfor %}
-</feed>  
-{% endraw %}
+    <xs:simpleType name="content-attr-type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="html" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="summary-attr-type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="text" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="feed-link-attr-type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="site" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="entry-link-rel-attr-type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="via" />
+            <xs:enumeration value="mobile" />
+            <xs:enumeration value="app" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="entry-link-type-attr-type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(playstore|itunes|nstore):.*" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="author-type">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="url" type="xs:anyURI" minOccurs="0" />
+            <xs:element name="email" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="feed">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:anyURI" />
+                <xs:element name="title" type="xs:string" />
+                <xs:element name="author" type="author-type" />
+                <xs:element name="updated" type="xs:dateTime" />
+                <xs:element name="link" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attribute name="rel" type="feed-link-attr-type" />
+                        <xs:attribute name="href" type="xs:anyURI" />
+                        <xs:attribute name="title" type="xs:string" use="optional" />
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="entry">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="id" type="xs:anyURI" />
+                                <xs:element name="title" type="xs:string" />
+                                <xs:element name="author" type="author-type" />
+                                <xs:element name="updated" type="xs:dateTime" />
+                                <xs:element name="published" type="xs:dateTime" />
+                                <xs:element name="link" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:attribute name="rel" type="entry-link-rel-attr-type" />
+                                        <xs:attribute name="href" type="xs:anyURI" />
+                                        <xs:attribute name="title" type="xs:string" use="optional" />
+                                        <xs:attribute name="type" type="entry-link-type-attr-type" use="optional" />
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="content">
+                                    <xs:complexType mixed="true">
+                                        <xs:attribute name="type" type="content-attr-type" />
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                                    <xs:element name="category">
+                                        <xs:complexType mixed="true">
+                                            <xs:attribute name="term" type="xs:string" />
+                                            <xs:attribute name="label" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="summary">
+                                        <xs:complexType mixed="true">
+                                            <xs:attribute name="type" type="summary-attr-type" />
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:choice>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="deleted-entry">
+                        <xs:complexType>
+                            <xs:attribute name="ref" type="xs:anyURI" />
+                            <xs:attribute name="when" type="xs:dateTime" />
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
