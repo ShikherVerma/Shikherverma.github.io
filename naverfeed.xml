@@ -1,118 +1,37 @@
-<?xml version="1.0"?>  
-<xs:schema  
-    xmlns="http://webmastertool.naver.com"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://webmastertool.naver.com"
-    elementFormDefault="qualified">
-
-    <xs:annotation>
-        <xs:documentation>
-            elements for syndication
-        </xs:documentation>
-    </xs:annotation>
-
-    <xs:simpleType name="content-attr-type">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="html" />
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="summary-attr-type">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="text" />
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="feed-link-attr-type">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="site" />
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="entry-link-rel-attr-type">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="via" />
-            <xs:enumeration value="mobile" />
-            <xs:enumeration value="app" />
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="entry-link-type-attr-type">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="(playstore|itunes|nstore):.*" />
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:complexType name="author-type">
-        <xs:sequence>
-            <xs:element name="name" type="xs:string" />
-            <xs:element name="url" type="xs:anyURI" minOccurs="0" />
-            <xs:element name="email" type="xs:string" minOccurs="0" />
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:element name="feed">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="id" type="xs:anyURI" />
-                <xs:element name="title" type="xs:string" />
-                <xs:element name="author" type="author-type" />
-                <xs:element name="updated" type="xs:dateTime" />
-                <xs:element name="link" minOccurs="0">
-                    <xs:complexType>
-                        <xs:attribute name="rel" type="feed-link-attr-type" />
-                        <xs:attribute name="href" type="xs:anyURI" />
-                        <xs:attribute name="title" type="xs:string" use="optional" />
-                    </xs:complexType>
-                </xs:element>
-
-                <xs:choice minOccurs="0" maxOccurs="unbounded">
-                    <xs:element name="entry">
-                        <xs:complexType>
-                            <xs:sequence>
-                                <xs:element name="id" type="xs:anyURI" />
-                                <xs:element name="title" type="xs:string" />
-                                <xs:element name="author" type="author-type" />
-                                <xs:element name="updated" type="xs:dateTime" />
-                                <xs:element name="published" type="xs:dateTime" />
-                                <xs:element name="link" maxOccurs="unbounded">
-                                    <xs:complexType>
-                                        <xs:attribute name="rel" type="entry-link-rel-attr-type" />
-                                        <xs:attribute name="href" type="xs:anyURI" />
-                                        <xs:attribute name="title" type="xs:string" use="optional" />
-                                        <xs:attribute name="type" type="entry-link-type-attr-type" use="optional" />
-                                    </xs:complexType>
-                                </xs:element>
-                                <xs:element name="content">
-                                    <xs:complexType mixed="true">
-                                        <xs:attribute name="type" type="content-attr-type" />
-                                    </xs:complexType>
-                                </xs:element>
-                                <xs:choice minOccurs="0" maxOccurs="unbounded">
-                                    <xs:element name="category">
-                                        <xs:complexType mixed="true">
-                                            <xs:attribute name="term" type="xs:string" />
-                                            <xs:attribute name="label" type="xs:string" use="optional" />
-                                        </xs:complexType>
-                                    </xs:element>
-                                    <xs:element name="summary">
-                                        <xs:complexType mixed="true">
-                                            <xs:attribute name="type" type="summary-attr-type" />
-                                        </xs:complexType>
-                                    </xs:element>
-                                </xs:choice>
-                            </xs:sequence>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="deleted-entry">
-                        <xs:complexType>
-                            <xs:attribute name="ref" type="xs:anyURI" />
-                            <xs:attribute name="when" type="xs:dateTime" />
-                        </xs:complexType>
-                    </xs:element>
-                </xs:choice>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-</xs:schema>
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://webmastertool.naver.com">
+    <id>
+        http://www.syndi-example.com/bbs/
+    </id>
+    <title>Naver Syndication Sample Document</title>
+    <author>
+        <name>webmaster</name>
+        <email>webmaster@donotsend.email</email>
+    </author>
+    <updated>2014-06-26T20:10:49+09:00</updated>
+    <link rel="site"
+        href="http://www.syndi-example.com"
+        title="Naver Syndication Sample Document" />
+    <entry>
+        <id>
+            http://www.syndi-example.com/bbs/board.php?bo_table=search_info&amp;id=63643
+        </id>
+        <title><![CDATA[검색 잘되는 웹문서 만들기란?]]></title>
+        <author>
+            <name>user_name</name>
+        </author>
+        <updated>2014-06-26T20:10:48+09:00</updated>
+        <published>2014-06-26T20:10:48+09:00</published>
+        <link rel="via"
+            href="http://www.syndi-example.com/bbs/board.php?bo_table=search_info"
+            title="검색정보 게시판" />
+        <link rel="mobile"
+            href="http://m.syndi-example.com/bbs/search_info/63643" />
+        <content type="html"><![CDATA[<div class="webguide_area"><h4>검색 잘되는 웹문서 만들기란?</h4><p>검색등록 서비스를 통해 검색반영 신청하신 사이트 내의 모든 URL(페이지)는 기본적으로 검색로봇이 방문할 대상으로 인식하여, 네이버 검색로봇이 주기적으로 방문 후 <br>검색에 함께 자동 반영하고 있습니다.<br>네이버 검색팀에서는 당신이 소중히 관리하는 사이트 및 내부의 좋은 문서들이 네이버 검색 및 여타 검색로봇에 잘 반영되도록 기술적으로 지원하고자 합니다. <br>이를 위해 네이버 및 다른 모든 <strong>검색로봇에 잘 수집-노출되는 웹문서를 만들기 위한 방법</strong>을 가이드페이지로 제작하여 1차 공개합니다. <br>추후 사이트 운영자분들에게 도움이 될 다양한 기능 및 정보를 추가로 제공할 예정이니 많은 관심 부탁드리며,<br>특히 <em>본인이 사이트 운영자이지만 개발자가 아닌 경우, 개발자(웹마스터)에게 꼭 이 페이지를 알려</em>주시고 검색에 잘 나올 수 있도록 고쳐달라고 부탁하시기 바랍니다.<br><br>(원본 출처 : <a href="https://submit.naver.com/web.nhn" target="_blank">클릭</a>)</p></div>]]></content>
+        <summary type="text"><![CDATA[검색 잘되는 웹문서 만들기란? 검색등록 서비스를 통해 검색반영 신청하신 사이트 내의 모든 URL(페이지)는 기본적으로 검색로봇이 방문할 대상으로 인식하여, 네이버 검색로봇이 주기적으로 방문 후 검색에 함께 자동 반영하고 있습니다. 네이버 검색팀에서는 당신이 소중히 관리하는 사이트 및 내부의 좋은 문서들이 네이버 검색 및 여타 검색로봇에 잘 반영되도록 기술적으로 지원하고자 합니다. 이를 위해 네이버 및 다른 모든 검색로봇에 잘 수집-노출되는 웹문서를 만들기 위한 방법을 가이드페이지로 제작하여 1차 공개합니다. 추후 사이트 운영자분들에게 도움이 될 다양한 기능 및 정보를 추가로 제공할 예정이니 많은 관심 부탁드리며, 특히 본인이 사이트 운영자이지만 개발자가 아닌 경우, 개발자(웹마스터)에게 꼭 이 페이지를 알려주시고 검색에 잘 나올 수 있도록 고쳐달라고 부탁하시기 바랍니다. (원본 출처 : 클릭)]]></summary>
+        <category term="search_info" label="검색정보" />
+    </entry>
+    <deleted-entry
+        ref="http://www.syndi-example.com/bbs/board.php?bo_table=search_info&amp;id=63642"
+        when="2014-06-26T20:10:45+09:00" />
+</feed>
