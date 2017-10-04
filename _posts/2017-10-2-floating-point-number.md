@@ -31,7 +31,7 @@ tags: [ComputerScience]
 
 
 
-1byte = 8bit  입니다. = 2^3 = 8
+1byte = 8bit  입니다. = 2^8 = 1byte
 
 1KB = 1024byte = 2^10 byte = 1024 byte
 
@@ -126,7 +126,7 @@ tags: [ComputerScience]
 컴퓨터에서 왜 이렇게 사용되는지 자세하게 알고 싶으신 분이 계시다면, **IEEE(the Institute of Electrical and Electronics Engineers) 에서 1985 년에 제정하고 ANSI(the American National Standards Institute) 에서 승인된 부동 소수점**에 대해서 찾아 보시기 바랍니다.
 
 
-- IEEE 부동소수점 표준에서는 4바이트를 사용하는 단정도(single precision), 8바이트를 사용하는 배정도(double precision)의 두가지 기본 형대가 정의 되어 있습니다.
+- IEEE 부동소수점 표준에서는 4바이트를 사용하는 단정도(single precision), 8바이트를 사용하는 배정도(double precision)의 두가지 기본 형태가 정의 되어 있습니다.
  
 1비트 부호(0은 양수, 1은 음수), 8비트 지수부(exponent), 23비트 가수부(significand) 의 세부분으로 이루어지고, 가장 아래 자리가 비트가 오른쪽에 위치 합니다. 32 비트 4바이트 형식으로 이루어져 있습니다. 
  
@@ -172,7 +172,7 @@ tags: [ComputerScience]
 
 2진수로 10진수를 표현할수 있는 범위에 대해서 알아봅시다.
 
-0~10 까지 온전히 표현학 위해서는 2진수 4자리수가 필요합니다. 이게 무슨 말인가 하면. 
+0~10 까지 온전히 표현하기 위해서는 2진수 4자리수가 필요합니다. 이게 무슨 말인가 하면. 
 
 1 -> 최대 10진수 까지 1 표현 가능
 11 -> 최대 10진수 3 까지 표현 가능
