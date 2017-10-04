@@ -47,5 +47,5 @@ plugins: [jekyll-paginate, jekyll-feed, jekyll-gist]
 
 # search_google
 
-google-site-verification: google584dc7a5a28f263d.html
+#google-site-verification: google584dc7a5a28f263d.html
 
