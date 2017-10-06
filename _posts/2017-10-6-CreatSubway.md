@@ -162,7 +162,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
  
 
-![screensh](/img/posts/CreatSubway3.jpg) ![screensh](https://user-images.githubusercontent.com/30401511/31275413-126a2ca0-aad2-11e7-8c45-7bd39fec8254.jpg)
+![screensh](/img/posts/CreatSubway3.jpg) 
+
+![screensh](https://user-images.githubusercontent.com/30401511/31275413-126a2ca0-aad2-11e7-8c45-7bd39fec8254.jpg)
 
 > 확대, 축소후 기능 버튼 위치 그대로(검정색 원이 사실은 버튼입니다)
 
