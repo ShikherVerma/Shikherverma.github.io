@@ -160,7 +160,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 ---
 
-## 3. 각 역마다 버튼 넣고, 위치 지정 
+## 3. 각 역마다 버튼 넣고, 위치 지정(버튼은 총 13개만 만들었습니다!)
 
  
 
