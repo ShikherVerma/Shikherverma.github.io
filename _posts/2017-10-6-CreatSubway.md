@@ -34,7 +34,7 @@ tags: [Swift]
 ## 1. 이미지와, 스크롤뷰 생성 
 
 
-![screensh](/img/posts/CreatSubway.jpg) ![screensh](/img/posts/CreatSubway1.jpg)
+| ![screensh](/img/posts/CreatSubway.jpg) | ![screensh](/img/posts/CreatSubway1.jpg) |
 
 
 
