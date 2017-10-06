@@ -11,6 +11,8 @@ tags: [Swift]
 
 # Alert, ScrollView 를 이용해서 지하철 노선도 만들기!
 
+[프로젝트 위치는 이곳 입니다.](https://github.com/devminjun/IOS-Develop5/tree/master/Project/CreatSubWay)
+
 
 ---
 
@@ -849,6 +851,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 순서가 바뀌면, 예외처리에 해당하는 부분을 실행하게되면 app이 죽어버립니다..ㅠ.ㅠ
 
 ---
+
+
 
 
 ## 여담
