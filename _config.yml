@@ -1,5 +1,5 @@
 # Site settings
-title: MinJun-Dev
+title: Dev-Minjun
 default_author: MinJun-Ju
 description: "Hello World"  # used in site head
 
@@ -21,7 +21,7 @@ stackoverflow_username: 8601335/minjunju?tab=profile
 #twitter_username : shikherverma42
 #linkedin_username : shikherverma42
 #keybase_username : shikherverma
-copyright_name: MJ.Dev
+copyright_name: Dev-MJ
 rss : false
 
 # used for portfolio on home page
