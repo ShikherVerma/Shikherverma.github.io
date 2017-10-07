@@ -38,7 +38,7 @@ tags: [Swift]
 
 
 
-> 이미지, 스크롤뷰 
+> UIImageView, UIScrollView
 
 
 ```swift
