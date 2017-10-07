@@ -82,6 +82,10 @@ github blog 에 댓글 기능을 넣기 위해서는 `disqus`를 사용합니다
 
 `_config.yml` 에 들어가서 추가해줍니다. 
 
+> disqus_url 을 추가하지 않아도 실행이 되는 경우도 있습니다!
+> 
+> disqus_ID 작성하실떄, `Setting -> Admin -> 좌측 상단에 자신이 만들어 놓은 disqus site 에 들어가신후 -> Shortname` 을 작성하셔야합니다. shortname 이 맨처음 설정한 이름과 다른경우가 생길수 있습니다!
+
 
 
 ---

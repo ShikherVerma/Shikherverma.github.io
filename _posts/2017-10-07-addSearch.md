@@ -24,32 +24,7 @@ github blog 도 만들고, 댓글 기능도 구현 했다면, 이제는 google, 
 
 ## sitemap.xml 만들기
 
-```xml
-
-
----
----
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for post in site.posts %}
-    <url>
-        <loc>{{ site.url }}{{ post.url | remove: 'index.html' }}</loc>
-    </url>
-    {% endfor %}
-
-    {% for page in site.pages %}
-    {% if page.layout != nil %}
-    {% if page.layout != 'feed' %}
-    <url>
-        <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
-    </url>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-</urlset>
-
-
-```
+[여기 코드를 복사해서 사용합니다.](https://github.com/devminjun/devminjun.github.io/blob/master/sitemap.xml)
 
 > 위의 코드를 복사할때  위의  --- 두줄도 같이 복사해서 사용하셔야 합니다.
 
@@ -63,41 +38,7 @@ github blog 도 만들고, 댓글 기능도 구현 했다면, 이제는 google, 
 
 ## feed.xml 파일 만들기 
 
-```xml
-
----
-layout: null
----
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:30 %}
-      <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
-      </item>
-    {% endfor %}
-  </channel>
-</rss>
-
-
-```
+[여기의 코드를 복사해서 사용합니다.](https://github.com/devminjun/devminjun.github.io/blob/master/feed.xml)
 
 1. 위의 코드를 복사해서, 자신의 github blog `root 디렉토리`에  `feed.xml` 을 만들어서 복사 붙여놓기를 합니다.
 
