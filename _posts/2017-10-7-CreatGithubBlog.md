@@ -59,6 +59,8 @@ tags: [Github]
 
 ---
 
+# 1.
+
 ![screen](/img/posts/CreatGithubblog2.jpg)
 
 이제 theme 을 선택했으니, Github blog Page 생성 하는 방법을 알아보겠습니다.
@@ -67,6 +69,7 @@ tags: [Github]
 
 ---
 
+# 2.
 
 ![screen](/img/posts/CreatGithubblog3.jpg)
 
@@ -76,6 +79,8 @@ tags: [Github]
 
 ---
 
+# 3.
+
 ![screen](/img/posts/CreatGithubblog4.jpg)
 
 `fork`를 했으면, 내 github 계정으로 가서, 잘 fork 가 되었는지 확인합니다. 잘 `fork`가 되었다면 자신의 이름으로 `fork`가 된것을 확인할수 있습니다. 
@@ -84,6 +89,7 @@ tags: [Github]
 
 ---
 
+# 4.
 ![screen](/img/posts/CreatGithubblog5.jpg)
 
 Settings 부분을 들어가면, 아래같은 화면을 볼수 있는데, `Repository name` 을 github 계정 이름.github.io로 바꿉니다. 현재 자신의 github 계정의 이름이 궁금 하면, 아래 화면의 왼쪽 상단 부분 보시면 `나의github계정 이름/trophy-jekyll` 을 확인 하실수 있습니다.
@@ -93,7 +99,8 @@ Settings 부분을 들어가면, 아래같은 화면을 볼수 있는데, `Repos
 
 ---
 
-
+# 5.
+ 
 ![screen](/img/posts/CreatGithubblog6.jpg)
 
 여기까지 했으면 절반 완성했습니다. 이제는 자신의 홈페이지를 어떻게 커스텀 할것인지 정해야하는데
@@ -115,6 +122,16 @@ github blog Theme 은 거의 비슷한 구조를 가지고 있습니다.
 > 자 이제 여기 까지 읽었다면, README.md 를 읽고 -> _config.yml 에 들어가서 기본 설정을 하고 `https://github이름.github.io`로 들어가서 확인해봅시다!
 > 
 > 주의 사항으로는, 이녀석들을 설정하고 git add > git commit > git push 과정까지 해주어야 합니다. 위의 과정을 마치고 약 5분 정도 이후에 들어갔을때, 홈페이지가 보인다면 성공, 그렇지 않다면, 어딘가 잘못 작성이 되었을 것입니다..!(혹은 git push 이후에 홈페이지가 바로 생성이 되지 않는 경우도 있습니다. github 과 github page간의 시간차(?) 가 생길수도 있는데 심한 경우 post를 하나 작성해놓고, 하루가 지나고 확인하면 post가 되는 경우도 있습니다...! 
+
+---
+
+## MarkDown 사용방법
+
+[MarkDown 문법 설명이 잘되어 있습니다.](https://gist.github.com/ihoneymon/652be052a0727ad59601)
+
+[MarkDown 웹 에디터 입니다](https://stackedit.io/editor)
+
+[제가 사용하고 있는 MarkDown 에디터 MacDown 다운로드 링크입니다](http://d.pr/f/YeYkOQ?itm_campaign=directdownload&itm_content=views1000)
 
 ---
 
