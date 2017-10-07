@@ -49,7 +49,7 @@ github blog 에 댓글 기능을 넣기 위해서는 `disqus`를 사용합니다
 
 ![screen](/img/posts/disqus3.jpg)
 
-`i want to install Disqus on my site` 로 들어갑니다.
+`I want to install Disqus on my site` 로 들어갑니다.
 
 ---
 
@@ -92,9 +92,13 @@ github blog 에 댓글 기능을 넣기 위해서는 `disqus`를 사용합니다
 
 잘 작동이 되는지 확인해줍니다!
 
+---
+
 ## Reference
 
 [disqus 사용방법: hackya 님 블로그](https://hackya.com/kr/disqus-api-사용하는-방법/)
+
+[제트슈만님 블로그](http://shuman.tistory.com/61)
 
 
 
