@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://webmastertool.naver.com">
-<id>
-http://www.syndi-example.com/bbs/ </id>
-<title>Naver Syndication Sample Document</title> <author>
-             <name>webmaster</name>
-<email>webmaster@donotsend.email</email> </author>
-<updated>2014-06-26T20:10:49+09:00</updated> <entry>
-             <id>
-                    http://www.syndi-
-example.com/bbs/board.php?bo_table=search_info&amp;id=63643 </id>
+
+	<id>
+		http://www.syndi-example.com/bbs/ 
+	</id>
+	<title>Naver Syndication Sample Document
+	</title> 
+	<author>
+		<name>
+			webmaster
+		</name>
+		<email>
+			webmaster@donotsend.email
+		</email> 
+	</author>
+	<updated>
+		2014-06-26T20:10:49+09:00
+	</updated> 
+	<entry>
+		<id>
+			http://www.syndi-example.com/bbs/board.php?bo_table=search_info&amp;id=63643 
+		</id>
