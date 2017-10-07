@@ -36,15 +36,17 @@ tags: [Github]
 
 ## Blog 테마 설정 
 
-[여기](https://github.com/jekyll/jekyll/wiki/themes)에 들어 가면 내가 적용 할 blog 의 Themes을 확인 할수 있습니다. 
+**[여기](https://github.com/jekyll/jekyll/wiki/themes)** 에 들어 가면 내가 적용 할 blog 의 Themes을 확인 할수 있습니다.(blog의 테마를 고른다고 생각하시면 됩니다!)
 
 
 ![screen](/img/posts/CreatGithubblog.jpg)
 
 마음에 드는 Theme 를 선택후, demo 부분을 눌러서 확인 해봅니다(저는 여기에서 시간이 제일 많이 걸렸습니다..) 
 
-> 주의사항: 저는 마음에드는 여러가지 Theme을 적용 해보았는데, 처음에는 멋지고 화려한 theme 보다, 심플한 theme 을 사용 하는 것이 정신건강에 좋다는걸 알았습니다.. 물론 멋진 theme 을 하고 싶지만, 멋진 theme 일수록, 구조가 복잡해서 아무것도 모를때는 사용하기가 조금 까다로웠습니다.(HTML, CSS, Javascript 에 대한 이해가 있으신분은 예외입니다)
+> 주의사항: 저는 마음에드는 여러가지 Theme을 적용 해보았는데, 처음에는 멋지고 화려한 theme 보다, 심플한 theme 을 사용 하는 것이 정신건강에 좋다는걸 알았습니다.. 물론 멋진 theme 을 하고 싶지만, 멋진 theme 일수록 구조가 복잡해서 아무것도 모르고 이것저것 만지다보면 예상하지 못한 에러들이 튀어나오는데, 멘붕의 서막 시작입니다..(HTML, CSS, Javascript 에 대한 이해가 있으신분은 예외입니다)
 
+
+---
 
 ## GitHub Blog Page 생성 하기 
 
@@ -52,10 +54,10 @@ tags: [Github]
 
 ![screen](/img/posts/CreatGithubblog1.jpg)
 
-저는 예시로 trophy theme 을 선택 했습니다. 
+저는 예시로 `trophy` theme 을 선택 했습니다. 
 
 
-
+---
 
 ![screen](/img/posts/CreatGithubblog2.jpg)
 
@@ -63,7 +65,7 @@ tags: [Github]
 
 아까 theme 선택하는 부분에서, `source` 부분을 들어갑니다
 
-
+---
 
 
 ![screen](/img/posts/CreatGithubblog3.jpg)
@@ -72,17 +74,24 @@ tags: [Github]
 
 > fork 는 나의 나의 github 계정으로, 다른 사람이 만들어 놓은 source 를 가져오는 과정입니다. 
 
+---
+
 ![screen](/img/posts/CreatGithubblog4.jpg)
 
 `fork`를 했으면, 내 github 계정으로 가서, 잘 fork 가 되었는지 확인합니다. 잘 `fork`가 되었다면 자신의 이름으로 `fork`가 된것을 확인할수 있습니다. 
 
 이제 홈페이지 중단부의 Code Pull Requeste Projects .... 부분에서 Settings 부분을 들어갑니다.
 
+---
+
 ![screen](/img/posts/CreatGithubblog5.jpg)
 
 Settings 부분을 들어가면, 아래같은 화면을 볼수 있는데, `Repository name` 을 github 계정 이름.github.io로 바꿉니다. 현재 자신의 github 계정의 이름이 궁금 하면, 아래 화면의 왼쪽 상단 부분 보시면 `나의github계정 이름/trophy-jekyll` 을 확인 하실수 있습니다.
 
 > 위의 github계정이름.github.io가 실제 blog의 주소가 됩니다. 이게 마음이 들지 않다면 `CNAME` 을 이용해서 주소를 바꿀수 있습니다. 이 내용은 이 post에서는 다루지 않겠습니다!
+
+
+---
 
 
 ![screen](/img/posts/CreatGithubblog6.jpg)
@@ -107,9 +116,10 @@ github blog Theme 은 거의 비슷한 구조를 가지고 있습니다.
 > 
 > 주의 사항으로는, 이녀석들을 설정하고 git add > git commit > git push 과정까지 해주어야 합니다. 위의 과정을 마치고 약 5분 정도 이후에 들어갔을때, 홈페이지가 보인다면 성공, 그렇지 않다면, 어딘가 잘못 작성이 되었을 것입니다..!(혹은 git push 이후에 홈페이지가 바로 생성이 되지 않는 경우도 있습니다. github 과 github page간의 시간차(?) 가 생길수도 있는데 심한 경우 post를 하나 작성해놓고, 하루가 지나고 확인하면 post가 되는 경우도 있습니다...! 
 
+---
 
 
-## Reference
+# Reference
 
 [github page 만들기: 태환님 블로그](http://thdev.net/653)
 
@@ -117,7 +127,7 @@ github blog Theme 은 거의 비슷한 구조를 가지고 있습니다.
 
 [git, github 사용방법](http://rogerdudler.github.io/git-guide/index.ko.html)
 
-[]()
+
 
 
 
