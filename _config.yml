@@ -14,15 +14,15 @@ disqus_id: minjujublog
 feedburner_url: #https://feedburner.google.com/fb/a/mailverify?uri=programmer-wannabe&amp;loc=en_US
 
 # footer details. Deleting the value would remove it from footer.
-github_username:  juuminjun
+github_username:  devminjun
 facebook_username:  JU89664111
-email: juuminjun
+email: devminjunju
 stackoverflow_username: 8601335/minjunju?tab=profile
 #twitter_username : shikherverma42
 #linkedin_username : shikherverma42
 #keybase_username : shikherverma
 copyright_name: Dev-MinJun
-rss : false
+rss : true
 
 # used for portfolio on home page
 collections:
@@ -48,5 +48,5 @@ plugins: [jekyll-paginate, jekyll-feed, jekyll-gist]
 
 # search_google
 
-#google-site-verification: google584dc7a5a28f263d.html
+google-site-verification: google584dc7a5a28f263d.html
 
