@@ -428,7 +428,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 
 
-![screensh](/img/posts/CreatSubWay6.jpg) ![screen](/img/posts/CreatSubWay7.jpg)  
+| ![screensh](/img/posts/CreatSubWay6.jpg) | ![screen](/img/posts/CreatSubWay7.jpg) |
 
 
 ![screen](/img/posts/CreatSubWay8.jpg) 
