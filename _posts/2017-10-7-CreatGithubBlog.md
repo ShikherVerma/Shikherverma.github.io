@@ -31,7 +31,7 @@ tags: [Github]
 4. jekyll의 구조 에 대한 이해 
 
 5. markDown 사용법
-
+ 
 ---
 
 ## Blog 테마 설정 
