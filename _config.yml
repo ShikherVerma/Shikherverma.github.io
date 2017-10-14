@@ -5,7 +5,7 @@ description: "Hello World"  # used in site head
 
 # register on google analytics and replace this token
 # google track ID 추가 
-google_analytics: UA-107518134-1
+google_analytics: UA-108098306-1
 # disque comments are broken if you send http:// along with url, this url is same as the one given on disqus
 # Deleting the value would remove it from footer.
 disqus_url: disqus.com/by/minjunju
