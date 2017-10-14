@@ -674,9 +674,11 @@ WeekDay1.fri.printWeekDay1() // "fri 입니다"
 	- 예) 여일, 상태값, 월(Month) 등
 	- 열거형 자체가 하나의 데이터 타입, 열거형의 case 하나하나 전부 하나의 유의미한 값으로 취급
 
-아직 배우지 않은 'Extension'	
-| | Class | Stuct | Enum |
-| type | Reference | Value | Value |
+
+
+| index |Class | Stuct | Enum |
+| :------------ | :-----------: | :-----------: | -----------: |
+| type | Reference | Value | Value1 |
 | Subclassing | O | X | X |
 | Extension | O | O | O |
 
