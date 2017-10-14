@@ -676,7 +676,7 @@ WeekDay1.fri.printWeekDay1() // "fri 입니다"
 
 
 
-| index |Class | Stuct | Enum |
+| * |Class | Stuct | Enum |
 | :------------ | :-----------: | :-----------: | -----------: |
 | type | Reference | Value | Value1 |
 | Subclassing | O | X | X |
