@@ -280,7 +280,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 | ![screen](/img/posts/beforeSubway.jpg) | ![screen](/img/posts/beforeSubway-1.jpg) |
 
 
-
+- data.swift 부분 
 
 
 ```swift
@@ -740,4 +740,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 	2. 더블탭 했을때, 탭 하는 부분을 확대, 축소 하게 만들고 싶은데 위의 코드는 사실 눈속임(?) 한것 같습니다. 엄밀하게 더블탭 했을때 그 부분을 확대 한다기 보다는 확대후 -> 해당 좌표를 찾아가게 만들었습니다. 조금더 좋은 의견 있으시면 댓글 남겨 주시면 정말 감사하겠습니다 (__)...!<br>
 
 
+
+## Reference 
+
+[다익스트라 관련 동영상과 코드](http://blog.daum.net/imagineer_ms/20)
+
+**패스트캠퍼스 정원님 진심으로 감사합니다🙏🙏🙏**
 
