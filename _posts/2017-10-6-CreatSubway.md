@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "지하철 노선도 만들기(초보편)"
+title:      "지하철 노선도 만들기(초보편) part 1"
 subtitle:   "Alert, ScrollView 이용해서 만들기"
 date:       2017-10-06 20:20:00
 author:     "MinJun"
@@ -11,7 +11,7 @@ tags: [Swift]
 
 # Alert, ScrollView 를 이용해서 지하철 노선도 만들기!
 
-[프로젝트 파일의 위치는 이곳 입니다.](https://github.com/devminjun/IOS-Develop5/tree/master/Project/CreatSubWay)
+[프로젝트 파일의 위치는 이곳 입니다.](https://github.com/devminjun/IOS-Develop5/tree/master/Project/CreatSubWay-ver1)
 
 
 ---

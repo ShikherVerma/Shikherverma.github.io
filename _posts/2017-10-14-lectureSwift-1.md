@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Swift 기본 문법 개괄 "
-subtitle:   "필요한 문법만 뽑아서 쓰자! part 2"
+title:      "Swift 기본 문법 개괄 part 2"
+subtitle:   "필요한 문법만 뽑아서 쓰자! "
 date:       2017-10-14 17:36:00
 author:     "MinJun"
 header-img: "img/tags/Swift-bg.jpg"
