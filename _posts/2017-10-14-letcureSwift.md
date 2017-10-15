@@ -117,7 +117,6 @@ dump(doubleNum * doubleNum1) // 0.010000000000000002
 
 ## 4. Any, AnyObject, nil
 
-**Any, AnyObject 타입에 다른 타입의 값을 넣었을때, 타입 캐스팅을 해줘야 하는 예제를 작성 해놓자**
 
 - Any : Swift의 모든 타입을 지칭하는 키워드(super 타입?)
 
@@ -152,9 +151,7 @@ var someObject: testAnyObject = anyObjects as! testAnyObject
 
 var nilValue: Int?
 
-print(nilValue) // nil
-
-가능하지만, 
+print(nilValue) // nil 이 가능하지만, 아래의 부분에서는 컴파일 오류가 발생한다.
 
 var nilValue = nil 
 
@@ -271,7 +268,7 @@ notReturnValue()
 ## 6-1. 함수 고급 
 
 
-**전달인자 레이블을 사용하면 중복 정의를 사용할수 있음. greeting 이라는 함수 이름이라는 함수를 되었다고 생각될수 있지만, 사실은 레이블이 포함된 이름을 사용하기 때문에, 레이블을 잘 사용하면 전달 인자의 역활도 나눌수 있고, 잘 사용할수 있음. **
+**전달인자 레이블을 사용하면 중복 정의를 사용할수 있음. greeting 이라는 함수 이름이라는 함수를 되었다고 생각될수 있지만, 사실은 레이블이 포함된 이름을 사용하기 때문에, 레이블을 잘 사용하면 전달 인자의 역활도 나눌수 있고, 잘 사용할수 있음.**
 
 ```swift
 
@@ -289,7 +286,7 @@ func greeting(yValue y: Int) {
 각각 함수 이름은 같지만, 정의가 가능하다. swift는 함수형 패러다임을 가지고 있어서, 함수의 이름만 가지고 정의 하는것이 아니라, 함수의 레이블 이름까지 포함된 이름을 함수 이름으로 정의 할수 있다. 그래서 같은 이름의 함수를 호출 하는것 같지만, 사실을 다른이름의 함수를 호출하는것 이다!
 
 
- -> 기본적으로 swift는 매서드 오버라이드가 안됨(같은 이름 정의를 하면 덮어 씌우는게 아니라, 컴파일 에러가 난다)
+ -> 기본적으로 swift는 매서드 오버라이드가 안됩니다.(같은 이름 정의를 하면 덮어 씌우는게 아니라, 컴파일 에러가 난다)
 
 ```
 
@@ -380,7 +377,7 @@ enum Optional<Wrapped> : ExpressibleByNillLiteral {
 
 ```swift
 let optionalValue: Optional<Int> = nil
-                    꺽쇠 갈호안에, 타입을 넣어야 완전한 문법이지만, 
+                    꺽쇠 괄호 안에, 타입을 넣어야 완전한 문법이지만, 
                     
 let optionalValue: Int? = nil
 
@@ -685,70 +682,25 @@ WeekDay1.fri.printWeekDay1() // "fri 입니다"
 
 **구조체는 언제 사용 하나?**
 
-- 연관된 몇몇의 값들을 모아서 하나의 데이터타입으로 표현하고 싶을때
-- 다른 객체 똔느 함수 등으로 전달될 때 *참조가 아닌 복사를 원할때* 
+- 연관된 몇몇의 값들을 모아서 하나의 데이터타입 으로 표현하고 싶을때
+- 다른 객체 또는 함수 등으로 전달될 때 *참조가 아닌 복사를 원할때* 
 - 자신을 상속할 필요가 없거나, 자신이 다른 타입을 상속받을 필요가 없을때
-- Apple 프레이뭐크에서 프로그래밍을 할 때에는 주로 클래스를 많이 사용 
+- Apple 프레임워크 에서 프로그래밍을 할 때에는 주로 클래스를 많이 사용 
 
  -> 구조체는 어떤 유의미한 값들을 연속적으로 핸들링 해야할때 사용하면 좋다. 
  
-```swift
-
-struct CallByValue {
-    var value = 1
-}
-
-class CallByReference {
-    var value = 1
-}
-
-
-
-var firstCallByValue = CallByValue()
-var secondCallByValue = firstCallByValue
-
-withUnsafePointer(to: &firstCallByValue) { pA in
-    print(pA)  }
-
-withUnsafePointer(to: &secondCallByValue) { pA in
-    print(pA)  }
-
-
-secondCallByValue.value = 100
-
-print(firstCallByValue.value, secondCallByValue.value) // 1, 100
-
-var firstCallbyReference = CallByReference()
-var secondCallByReference = firstCallbyReference
-
-secondCallByReference.value = 200
-
-
-
-withUnsafePointer(to: &firstCallbyReference) { pA in
-    print(pA)  }
-
-withUnsafePointer(to: &secondCallByReference) { pA in
-    print(pA)  }
-    
-  print(firstCallbyReference.value, secondCallByReference.value)  // 200, 200 
-
-
-
-```
-
-**포인터가 Value 의 녀석들은 메모리 주소를 정확하게 표시하는데, Reference 타입의 녀석들은 값을 정확하게 이상하게 찾아준다.. 뭐지..?...**
-
  
 
 - Call By Value, Call By Reference 차이를 정확하게 알수 있는 예제
 
 ```swift
 
+// 값 타입
 struct CallValue {
     var n: String = "1"
 }
 
+/ 참조 타입 
 class CallReference {
     var n: Int = 10
     
@@ -763,6 +715,7 @@ func CheckValue(x: CallValue) {
     testValue.n = "100"
 }
 
+// 값 타입은 인자를 전달할때, '값' 만 복사하여 전달 해준다. 그래서 전달 되어진 인자 자체의 값이 변하지는 않는다. 
 CheckValue(x: tester)
 
 print(tester.n) // 10
@@ -778,6 +731,8 @@ func CheckReference(x: CallReference) {
 var tester1: CallReference = CallReference()
 
 CheckReference(x: tester1)
+
+// 참조 타입이 인자로 전달되어 질때는, 값이 아닌 그 객체의 주소(ID) 그 자체가 전달이 되기 때문에, 전달 되어진 값이 변할때, 전달되어지기 이전의 값도 변하게 되는것입니다..!
 
 print(tester1.n) // 100, inout 을 사용하지 않았는데, 값이 변햇다.
 
@@ -869,7 +824,8 @@ func calAdd(x: Int, y:Int, Method: (Int, Int) -> Int) -> Int {
 }
 
 
-//뭐 이녀석은 마지막에 전달될 인자로 클로져구나... 라고 이해해야 함.. 
+// 변수 안에서 클로져가 선언될때, 후행 클로져로서 앞의 두 인자를 받아서, 인트 타입을 반환 한다는 의미로서 정의 해줄수 있다.
+
 var testClosure = calAdd(x: 10, y: 20) { (left: Int, right: Int) -> Int in
     return left * right
 }
