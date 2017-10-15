@@ -32,7 +32,7 @@ tags: [Swift]
 
 - 기존(Part 1)
 
-```swfit
+```swift
 
 import UIKit
 
