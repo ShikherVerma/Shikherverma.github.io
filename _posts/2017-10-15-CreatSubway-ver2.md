@@ -464,13 +464,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
       
         
         /*==========================
-                  btn 만들기<br>
-                 각 버튼 위치<br>
-         		버튼 색상, 곡률 지정<br>
-       		  버튼 imageView 에 추가.<br>
-      			   버튼 기능 연결<br>
-     			    역 이름 한글 지정<br>
-   			    tag 값 설정<br>
+                  btn 만들기
+              각 버튼 위치       		버튼 색상, 곡률 지정  
+    버튼 imageView 에 추가.
+      		버튼 기능 연결
+	    역 이름 한글 지정
+   			tag 값 설정
          ========================*/
         
         //stationBtns = Array(repeatElement(UIButton(), count: Station.stations.count))
