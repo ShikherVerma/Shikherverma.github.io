@@ -2,7 +2,7 @@
 layout:     post
 title:      "지하철 노선도 만들기(초보편) part 1"
 subtitle:   "Alert, ScrollView 이용해서 만들기"
-date:       2017-10-06 20:20:00
+date:       2017-10-15 16:25:00
 author:     "MinJun"
 header-img: "img/tags/Swift-bg.jpg"
 comments: true
