@@ -277,7 +277,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 | 기존 | 변경후 |
 | :------------ | -----------: | 
-| ![screen](/img/posts/beforeSubway.jpg) | ![screen](/img/posts/beforeSubway.jpg-1 |
+| ![screen](/img/posts/beforeSubway.jpg) | ![screen](/img/posts/beforeSubway.jpg-1) |
 
 
 
