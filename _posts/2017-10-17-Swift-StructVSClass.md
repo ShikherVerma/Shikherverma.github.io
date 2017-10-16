@@ -199,10 +199,10 @@ var structInstance = rootStructInstance
 
 
 withUnsafePointer(to: &rootStructInstance) { Pa in print(Pa) } // 0x0000000100442218
-                                                            // debug_window memory addres 0x100442218
+                                             // debug_window memory addres 0x100442218
                                                             
 withUnsafePointer(to: & structInstance) { Pa in print(Pa) } // 0x0000000100442220
-                                                            // debug_window memory addres 0x100442220
+                                            // debug_window memory addres 0x100442220
 
 -> `withUnsafePointer` : 메모리 주소값을 출력, 둘은 서로 다른 메모리 주소값에 정의 되어 있고, 
 -> debug_window : 통해서 서로 다른 참조를 하고 있는것을 확인할수 있다.
