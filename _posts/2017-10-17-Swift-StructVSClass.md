@@ -224,10 +224,10 @@ var classInstance = rootInstance
 
 
 withUnsafePointer(to: & rootInstance) { Pa in print(Pa) } // 0x00000001004420e0
-                                                            // debug_window memory addres 0x102824af0
+                                       // debug_window memory addres 0x102824af0
                                                             
 withUnsafePointer(to: & classInstance) { Pa in print(Pa) }  // 0x00000001004420e8
-                                                            // debug_window memory addres 0x102824af0
+                                       // debug_window memory addres 0x102824af0
                                                             
 -> `withUnsafePointer` : 메모리 주소값을 출력, 둘은 서로 다른 메모리 주소값에 정의 되어 있고, 
 -> debug_window : 서로 같은 heap 영역의 인스턴스를 참조하고 있는것을 확인할수 있습니다.                                                            
