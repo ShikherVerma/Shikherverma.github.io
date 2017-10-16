@@ -168,7 +168,10 @@ print(rootStructInstance.x) // 0
 
 1. <br>
 
-| ![screen](/img/posts/ClassVSStruct-10.jpg) | ![screen](/img/posts/ClassVSStruct-11.jpg) | 
+| *  | * |
+| :------------ | -----------: | 
+| ![screen](/study/image/ClassVSStruct-10.jpg) | ![screen](/study/image/ClassVSStruct-11.jpg) | 
+
 
 > 1. 체크 포인트를 설정후 실행 합니다
 > 
