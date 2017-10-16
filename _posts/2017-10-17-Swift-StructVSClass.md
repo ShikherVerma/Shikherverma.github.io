@@ -235,6 +235,14 @@ withUnsafePointer(to: & classInstance) { Pa in print(Pa) }  // 0x00000001004420e
 
 ```
 
+---
+
+## 여담
+
+아직 많이 부족해서 제가 틀린 부분이 있을수 있습니다. 혹, 틀린 부분을 발견하신다면 댓글 남겨 주시면 언제든지 반영하겠습니다...🤗🙏
+
+---
+
 ## Reference 
 
 [Xcode help](http://help.apple.com/xcode/mac/9.0/#/dev9de24d52b)
