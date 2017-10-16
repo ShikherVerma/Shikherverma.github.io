@@ -205,7 +205,7 @@ withUnsafePointer(to: & structInstance) { Pa in print(Pa) } // 0x000000010044222
                                             // debug_window memory addres 0x100442220
 
 -> `withUnsafePointer` : 메모리 주소값을 출력, 둘은 서로 다른 메모리 주소값에 정의 되어 있고, 
--> debug_window : 통해서 서로 다른 참조를 하고 있는것을 확인할수 있다.
+-> debug_window : 통해서 서로 다른 참조를 하고 있는것을 확인할수 있습니다..
 
 
 // class 정의 
@@ -230,7 +230,7 @@ withUnsafePointer(to: & classInstance) { Pa in print(Pa) }  // 0x00000001004420e
                                                             // debug_window memory addres 0x102824af0
                                                             
 -> `withUnsafePointer` : 메모리 주소값을 출력, 둘은 서로 다른 메모리 주소값에 정의 되어 있고, 
--> debug_window : 서로 같은 heap 영역의 인스턴스를 참조하고 있는것을 확인할수 있다.                                                            
+-> debug_window : 서로 같은 heap 영역의 인스턴스를 참조하고 있는것을 확인할수 있습니다.                                                            
 
 
 ```
