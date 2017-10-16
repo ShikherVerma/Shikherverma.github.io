@@ -175,7 +175,7 @@ print(rootStructInstance.x) // 0
 
 > 1. 체크 포인트를 설정후 실행 합니다
 > 
-> 2. memory 주소를 확인할 변수를 오른쪽 마우스로 클릭한후 `View Memory Of '변수명'` 을 클릭 합니다.
+> 2. 디버깅창 왼쪽 부분에서 memory 주소를 확인할 변수를 오른쪽 마우스로 클릭한후 `View Memory Of '변수명'` 을 클릭 합니다.
 
 2. <br>
 
