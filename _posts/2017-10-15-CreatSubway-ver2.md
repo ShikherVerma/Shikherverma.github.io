@@ -446,7 +446,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 스크롤뷰를 만드는 다양한 방법이 있는데, 이분은 이렇게 함.
+
         let frameSize = view.bounds.size
         scrollView = UIScrollView(frame: CGRect(origin: CGPoint.zero, size: frameSize))
         
