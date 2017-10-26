@@ -2,7 +2,7 @@
 layout: post
 title : "Practical Data Structures Guide for Android developers"
 subtitle : "Let’s explore some of the most used data structures in Android Development!"
-date: 2017-10-20 20:13:00
+date: 2017-10-25 20:13:00
 author: "Shikher Verma"
 header-img: "img/posts/android-bg.jpg"
 comments: true
@@ -41,7 +41,7 @@ If you know that a list is only going to have unique elements use a `HashSet` in
 As in the case of `Array` vs `ArrayList`, `EnumMap` vs `HashMap` we also have `EnumSet` vs `HashSet`. For example if you have a list of configuration keys you can represent the "selected" keys use an `EnumSet`. If order is important, similar to `LinkedHashMap`, here we have `LinkedHashSet` which preserves insertion order and `TreeSet` which keeps the elements sorted.
 
 *Trees*  
-Your data would hardly ever be of the form of a `Tree` but one very frequent use case is that of nested comments. I naively implemented nested comments using an `ArrayList` once. As a result all operations on the data (adding, removing, editing a comment) because incredibly complex. For example, removing a comment would be simply removing the comment node from the tree data structure, but since it was stored in a `ArrayList` I had to iterate forward from the index of the comment to remove all its children too. The work that should have been abstracted away by the data structure was not being handled when the data structure was used. Unfortunately java does not have a general tree implementation.
+Your data would hardly ever be of the form of a `Tree` but one very frequent use case is that of nested comments. I naively implemented nested comments using an `ArrayList` once. As a result all operations on the data (adding, removing, editing a comment) because incredibly complex. For example, removing a comment would be simply removing the comment node from the tree data structure, but since it was stored in a `ArrayList` I had to iterate forward from the index of the comment to remove all its children too. The work that should have been abstracted away by the data structure was now being handled when the data structure was used. Unfortunately java does not have a general tree implementation.
 
 *Stacks and Queues*  
 To be honest I have never used a `Stack` during android development. However they are used in Android itself (for example the activity back stack). I did `Queue` use, once in a background `IntentService`, to buffer work requests. `Stack` and `Queue` have very rare use during android development. But there are still important to know just in case the use ever comes up. Have you every used these during development ?
