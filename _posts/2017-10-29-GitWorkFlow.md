@@ -2,7 +2,7 @@
 layout:     post
 title:      "Git 을 이용한 WorkFlow"
 subtitle:   "Git을 이용해서 협업을 해보자!"
-date:       2017-10-29 18:35:00
+date:       2017-10-29 19:09:00
 author:     "MinJun"
 header-img: "img/tags/Github-bg.jpg"
 comments: true
