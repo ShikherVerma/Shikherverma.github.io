@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Git 을 이용한 WorkFlow"
-subtitle:   "Github, Git,.."
+subtitle:   "Git을 이용해서 협업을 해보자!"
 date:       2017-10-29 18:35:00
 author:     "MinJun"
 header-img: "img/tags/Github-bg.jpg"
@@ -87,16 +87,52 @@ git reset HEAD^
 ```
 
 2. feature_x 라는 branch 가 없으면 생성하고 feature_x brnach 로 이동합니다 <br>
+
 ```
 git checkout -b feature_x
 ```
-아래 명령으로 master 가지로 돌아올 수 있어요.
-git checkout master
-아래 명령으로는 가지를 삭제할 수 있어요.
+
+3. branch 삭제<br>
+
+```
 git branch -d feature_x
-여러분이 새로 만든 가지를 원격 저장소로 전송하기 전까지는
-다른 사람들이 접근할 수 없어요.
-git push origin <가지 이름>
+```
+
+4. 새로만든 branch 를 원격 저장소로 전송하기 전까지는 다른사람들이 접근할수 없습니다 <br>
+
+```
+git push origin <branch_name>
+```
+
+5. Git의 내장 GUI <br>
+
+```
+gitk
+```
+
+6. Git의 log 이력 확인
+
+```
+git log
+```
+
+7. git add, commit 시에 변경이력 확인 을 좀더 세부적으로 할수 있습니다
+
+```
+git add -p
+git commit -v
+```
+
+8. branch의 지역과, 원격 브랜치 보기
+
+```
+git branch -r
+```
+
+9 
+
+
+
 
 
 
