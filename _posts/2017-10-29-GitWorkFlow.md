@@ -145,5 +145,6 @@ git branch -r
 
 ## Refrence 
 
-#### [appkr.memo 님 blog](http://blog.appkr.kr/learn-n-think/comparing-workflows/)
-#### [Git 명령어 모음](https://medium.com/@joongwon/git-git-명령어-정리-c25b421ecdbd)
+#### [appkr.memo 님 blog](http://blog.appkr.kr/learn-n-think/comparing-workflows/) <br>
+
+#### [Git 명령어 모음](https://medium.com/@joongwon/git-git-명령어-정리-c25b421ecdbd) <br>
