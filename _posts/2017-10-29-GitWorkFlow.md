@@ -76,56 +76,56 @@ Feature Branch Workflow의 핵심 컨셉은 기능별 브랜치를 만들어서 
 
 ## Git 유용한 명렁어 
 
-1. 커밋 취소하기 <br>
+커밋 취소하기 <br>
 
 ```
 git reset HEAD^
 ```
 
-2. feature_x 라는 branch 가 없으면 생성하고 feature_x brnach 로 이동합니다 <br>
+feature_x 라는 branch 가 없으면 생성하고 feature_x brnach 로 이동합니다 <br>
 
 ```
 git checkout -b feature_x
 ```
 
-3. branch 삭제<br>
+branch 삭제<br>
 
 ```
 git branch -d feature_x
 ```
 
-4. 새로만든 branch 를 원격 저장소로 전송하기 전까지는 다른사람들이 접근할수 없습니다 <br>
+새로만든 branch 를 원격 저장소로 전송하기 전까지는 다른사람들이 접근할수 없습니다 <br>
 
 ```
 git push origin <branch_name>
 ```
 
-5. Git의 내장 GUI <br>
+Git의 내장 GUI <br>
 
 ```
 gitk
 ```
 
-6. Git의 log 이력 확인
+Git의 log 이력 확인
 
 ```
 git log
 ```
 
-7. log 이력과 변경 사항 표시
+log 이력과 변경 사항 표시
 
 ```
 git log -p
 ```
 
-8. git add, commit 시에 변경이력 확인 을 좀더 세부적으로 할수 있습니다
+git add, commit 시에 변경이력 확인 을 좀더 세부적으로 할수 있습니다
 
 ```
 git add -p
 git commit -v
 ```
 
-9. branch의 지역과, 원격 브랜치 보기
+branch의 지역과, 원격 브랜치 보기
 
 ```
 git branch -r
