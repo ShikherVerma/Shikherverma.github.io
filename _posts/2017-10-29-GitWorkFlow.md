@@ -9,10 +9,6 @@ comments: true
 tags: [Github]
 ---
 
-IT 회사에서 일해보지 않은 사람이 `github 으로 협업하기` 라는 키워드를 가지고 구글링해서 간단하게 정리한 내용입니다.
-
----
-
 ## Git을 이용한 협업 Workflow 
 
 1. Centralized Workflow
