@@ -24,8 +24,20 @@ IOS 등 애플의 개발 플랫폼을 이용하다 보면 외부 라이브러리
 
 ## CocoaPods 설치 하기
 
+- 설치 순서
+
 1. Xcode 로 Project 생성 
 2. 생성된 project 폴더로 이동하여(터미널로)
+3. podfile 을 생성해준다.
+4. pod 설치 
+
+---
+
+## CocoaPods 시작하기 
+
+
+* Xcode 로 Project 생성 <br>
+* 생성된 project 폴더로 이동하여(터미널로)
 
 ``` 
 sudo gem install cocoapods
@@ -34,7 +46,7 @@ sudo gem install cocoapods
 sudo gem uninstall cocoapods
 ```
 
-3. podfile 을 생성해준다.
+* podfile 을 생성해준다.
 
 ```
 pod init 
@@ -50,7 +62,7 @@ pod init
 
 [https://cocoapods.org](https://cocoapods.org) 가서 사용하고싶은 라이브러리를 검색후, 위의 이미지처럼 `end` 위에 podfile 을 복붙해서 사용하고 싶은 라이브러리를 추가한후.
 
-4. pod 설치 
+* pod 설치 
 
 ```
 pod install
