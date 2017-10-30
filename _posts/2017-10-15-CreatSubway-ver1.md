@@ -220,30 +220,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*==========================
-               각 역 인스턴스 생성
-         ==========================*/
-        yeungNamHosp = UIButton()
-        univOfEduc = UIButton()
-        myeongDeok = UIButton()
-
-        // 환승역
-        banWorlDang = UIButton()
-
-        jungangno = UIButton()
-        daeguStation = UIButton()
-        chilseongMarket = UIButton()
-
-        // 2호선
-        neaDang = UIButton()
-        bangogae = UIButton()
-        sinNam = UIButton()
-
-        kyungDeaHosp = UIButton()
-        daeguBank = UIButton()
-        beomeo = UIButton()
-        
-        
+               
         /*=======================
                  각 버튼 위치
          ========================*/
