@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Swift. Autolayout 사용하기 "
-subtitle:   "Autolayout 으로 기본적인 IOS UI 이해하자!"
+subtitle:   "Autolayout 으로 기본적인 IOS UI를 다각도로 구성하고 분석해보자! "
 date:       2017-11-05 22:21:00
 author:     "MinJun"
 header-img: "img/tags/Swift-bg.jpg"
@@ -99,6 +99,8 @@ item1.atrribute = 비율 * item2.atrribute + 간격
 ---
 
 ## Constraints Multiplier
+
+
 | * | 구름 View의 Constraints |
 | :---: | :---: |
 | ![screen](/img/posts/constraints-6.jpg) | ![screen](/img/posts/constraints-7.jpg) |
