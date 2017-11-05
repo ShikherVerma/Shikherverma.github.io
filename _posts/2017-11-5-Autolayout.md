@@ -100,7 +100,7 @@ item1.atrribute = 비율 * item2.atrribute + 간격
 
 ## Constraints Multiplier
 | * | 구름 View의 Constraints |
-| :--: | :---: |
+| :---: | :---: |
 | ![screen](/img/posts/constraints-6.jpg) | ![screen](/img/posts/constraints-7.jpg) |
 
 위같이, View에 상단에 반쯤 걸쳐 있는 View를 만들수 있는 상황이 있는데, 저렇게 표현하기 위한 방법은 여러가지가 있습니다. 구름 이미지가 GrayView의 자식 View로 들어가서 `AutolayOut` 을 적용해주어서 표현해줄수 있지만, 이런 경우는 좋은 경우가 아닙니다. 
