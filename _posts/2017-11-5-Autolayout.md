@@ -172,7 +172,7 @@ Image 는 기본적인 사이즈를 가지고 있습니다. ImageView에 imageVi
 | :--: | :---: |
 | ![screen](/img/posts/constraints-14.jpg) | ![screen](/img/posts/constraints-15.jpg) |
 
-| Portrait | 
+| Vary for Traits | 
 | :--: | 
 | ![screen](/img/posts/constraints-16.jpg) | 
 | ![screen](/img/posts/constraints-17.jpg) |
