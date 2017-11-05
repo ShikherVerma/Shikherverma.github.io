@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Swift. Autolatout 사용하기 "
+title:      "Swift. Autolayout 사용하기 "
 subtitle:   "Autolayout 으로 기본적인 IOS UI 이해하자!"
 date:       2017-11-05 22:21:00
 author:     "MinJun"
