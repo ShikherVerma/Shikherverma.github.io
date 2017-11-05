@@ -100,8 +100,7 @@ github blog 에 댓글 기능을 넣기 위해서는 `disqus`를 사용합니다
 
 ## Reference
 
-[disqus 사용방법: hackya 님 블로그](https://hackya.com/kr/disqus-api-사용하는-방법/)
-
+[disqus 사용방법: hackya 님 블로그](https://hackya.com/kr/disqus-api-사용하는-방법/)<br>
 [제트슈만님 블로그](http://shuman.tistory.com/61)
 
 

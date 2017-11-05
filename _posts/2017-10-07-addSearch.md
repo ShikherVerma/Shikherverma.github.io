@@ -118,11 +118,8 @@ Allow:
 ## Reference
 
 [초보 몽키님 블로그](https://wayhome25.github.io/etc/2017/02/20/google-search-sitemap-jekyll/) <br>
-
 [Dveamer님 블로그](http://dveamer.github.io/homepage/SubmitSitemap.html)<br>
-
 [naver 웹 마스터 도구 검색 가이드](http://webmastertool.naver.com/guide/basic_markup.naver#chapter1.3)<br>
-
 [naver 신디케이션 이란?](https://blog.usefulparadigm.com/네이버-신디케이션-제대로-쓰기-4edbff52ace1)<br>
 
 

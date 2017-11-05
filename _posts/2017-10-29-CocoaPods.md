@@ -79,9 +79,6 @@ pod install
 ## Reference 
 
 [야곰님 블로그](http://blog.yagom.net/534)<br>
-
 [네이버 D2](http://d2.naver.com/helloworld/444849)<br>
-
 [CocoaPods](https://github.com/CocoaPods/CocoaPods/wiki) <br>
-
 [https://cocoapods.org](https://cocoapods.org)

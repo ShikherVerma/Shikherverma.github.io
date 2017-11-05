@@ -138,10 +138,8 @@ github blog Theme 은 거의 비슷한 구조를 가지고 있습니다.
 
 # Reference
 
-[github page 만들기: 태환님 블로그](http://thdev.net/653)
-
-[jekyll Documents](https://jekyllrb.com/docs/home/)
-
+[github page 만들기: 태환님 블로그](http://thdev.net/653)<br>
+[jekyll Documents](https://jekyllrb.com/docs/home/)<br>
 [git, github 사용방법](http://rogerdudler.github.io/git-guide/index.ko.html)
 
 
