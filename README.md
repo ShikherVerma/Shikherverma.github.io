@@ -1,4 +1,4 @@
-리드 미 수정
+
 ## CleanBlogEnhanced jekyll template
 [![Build Status](https://travis-ci.org/ShikherVerma/Shikherverma.github.io.svg?branch=master)](https://travis-ci.org/ShikherVerma/Shikherverma.github.io)
 
