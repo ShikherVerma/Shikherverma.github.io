@@ -1,8 +1,5 @@
-# Devminj.github.io
 
----
-
-🐳 [Come !](https://devminjun.github.io)
+# 🐳 [https://devminjun.github.io](https://devminjun.github.io)
 
 ![screen](/img/mainImage.jpg)
 
