@@ -187,4 +187,24 @@ Dropped stash@{0} (629732d629732d629732d629732d)
 
 git stash drop 명령은 특정 stash를 삭제해 준다. stash ID를 명시하지 않으면 pop과 같이 나중에 저장된 내용이 먼저 삭제된다.
 
+---
+
+## 자주 사용하는 명령어
+
+| command | 내용 |
+| :----: | :----: |
+| git log | commit 이력 확인|
+| git diff | 원격과 로컬의 다른점을 보여줍니다 |
+| git check -b <branch 이름> | <branch 이름>의 branch 가 없으면, brnach 생성후, 해당 branch 로 이동합니다  |
+| git add -p | stage로 date를 보낼때 무엇이 변했는지 확인할수 있습니다.|
+| git commit -v | commit 단계에서, 무엇이 변했는지 확인할수 있습니다.|
+
+---
+
+## Reference 
+
+[git 생활코딩](https://mylko72.gitbooks.io/git/content/)<br>
+[git 입문](https://backlog.com/git-tutorial/kr/stepup/stepup3_1.html) <br>
+
+
 
