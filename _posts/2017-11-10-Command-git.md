@@ -100,9 +100,7 @@ tags: [Github]
 
 ---
 
-## Stash 
-
-#### 스테이시(`stash`)에 안전하게 보관하기
+## 스테이시(`stash`)에 안전하게 보관하기
 
 어떤 브랜치에서 파일을 수정하거나 추가한 후 커밋하지 않은 상태에서 다른 브랜치로 체크아웃할 경우 아래와 같이 오류메시지를 보게 된다.
 
@@ -143,11 +141,16 @@ HEAD is now at 629732d update css
 
 #### `git stash list` : 스테이시 목록 조회
 
+```
 $ git stash list
 stash@{0}: WIP on feature-meritz: 629732d update css
-`git stash' 하위 명령으로 list를 실행하게 되면 현재 stash area에 저장되어 있는 변경사항들을 모두 조회 가능하다. 목록 앞에 보이는 stash@{0}는 stash ID로 각각의 저장 내용을 구별짓는 번호이다. stash는 스택 방식으로 동작한다. 가장 최근에 저장한 것이 가장 먼저 나오게 된다.
-git stash pop : 저장내용을 복구
+```
 
+`git stash` 하위 명령으로 list를 실행하게 되면 현재 stash area에 저장되어 있는 변경사항들을 모두 조회 가능하다. 목록 앞에 보이는 stash@{0}는 stash ID로 각각의 저장 내용을 구별짓는 번호이다. stash는 스택 방식으로 동작한다. 가장 최근에 저장한 것이 가장 먼저 나오게 된다.
+
+#### `git stash pop` : 저장내용을 복구
+
+```
 $ git stash pop
 On branch feature-meritz
 Changes not staged for commit:
@@ -155,9 +158,14 @@ Changes not staged for commit:
   (use "git checkout -- <file>..." to discard changes in working directory)
 
         modified:   css/meritz.css
-git stash pop 명령을 통해 저장내용을 현재 브랜치에 적용할 수 있는데 이때 git status 결과를 함께 보여준다. 그리고, 스테이스 목록에서도 제거된다.
-git stash apply : stash에 저장된 내용을 다른 브랜치에 적용
+```
 
+        
+`git stash pop` 명령을 통해 저장내용을 현재 브랜치에 적용할 수 있는데 이때 git status 결과를 함께 보여준다. 그리고, 스테이스 목록에서도 제거된다.
+
+#### `git stash apply` : stash에 저장된 내용을 다른 브랜치에 적용
+
+```
 $ git stash apply
 On branch hotfix
 Changes not staged for commit:
@@ -165,11 +173,18 @@ Changes not staged for commit:
   (use "git checkout -- <file>..." to discard changes in working directory)
 
         modified:   css/meritz.css
-git stash apply 명령은 git stash pop와 비슷하면서도 다르다. 일단 현재 브랜치에서 저장된 내용을 적용하는 것은 동일하다. 하지만 적용된 저장된 내용을 stash 목록에서 drop하지는 않는다. 그러므로 이를 이용하면 여러 브랜치에 저장된 내용을 적용하는 것이 가능하다.
-git stash drop : stash에 저장된 내용 삭제
+```
 
+        
+git stash apply 명령은 git stash pop와 비슷하면서도 다르다. 일단 현재 브랜치에서 저장된 내용을 적용하는 것은 동일하다. 하지만 적용된 저장된 내용을 stash 목록에서 drop하지는 않는다. 그러므로 이를 이용하면 여러 브랜치에 저장된 내용을 적용하는 것이 가능하다.
+
+#### `git stash drop` : stash에 저장된 내용 삭제
+
+```
 $ git stash drop stash@{0}
 Dropped stash@{0} (629732d629732d629732d629732d)
+```
+
 git stash drop 명령은 특정 stash를 삭제해 준다. stash ID를 명시하지 않으면 pop과 같이 나중에 저장된 내용이 먼저 삭제된다.
 
 
