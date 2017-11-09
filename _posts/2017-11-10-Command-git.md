@@ -9,35 +9,64 @@ comments: true
 tags: [Github]
 ---
 
+## fetch 
 
+`Fetch` 는 원격 저장소의 데이터를 로컬에 가져오기만 합니다.(이게 무슨이야기 인가 하면) `pull` 을 실행하면, 원격 저장소의 내용을 가져와 자동으로 병합 작업을 실행하게 됩니다.(pull을 하게되면, 자동으로 merge 도 함께 실행하게 됩니다.) 그러나 단순히 원격 저장소의 내용을 확인만 하고 로컬 데이터와 병합은 하고 싶지 않은 경우에는 fetch 명령어를 사용할 수 있습니다.
 
+`fetch` 를 실행하면, 원격 저장소의 최신 이력을 확인할 수 있습니다. 이 때 가져온 최신 커밋 이력은 이름 없는 브랜치로 로컬에 가져오게 됩니다. 이 브랜치는 `FETCH_HEAD`의 이름으로 체크아웃 할 수도 있습니다.
 
+예를 들어, 로컬 저장소와 원격 저장소에 B에서 진행된 커밋이 있는 상태에서 fetch 를 수행하면 아래 그림과 같이 이력이 남겨집니다.
+
+![screen](/posts/img/gitlog.jpg)
+
+이 상태에서 원격 저장소의 내용을 로컬 저장소의 'master'에 통합하고 싶은 경우에는, 'FETCH_HEAD' 브랜치를 merge 하거나 다시 pull 을 실행하면 됩니다.
+
+![screen](/posts/img/gitlog-1.jpg)
+
+---
+
+## Pull 
+
+`Pull` 은 원격저장소에 저장되어있는 소스들을 가져와, 자동으로 merge 하게 됩니다. 이때 현재 Local 의 date와 충돌이 없으면 자동으로 merge가 되지만, 그렇지 않은 경우 충돌이 발생하고, 그 충돌을 해결 해주는 merge 과정이 필요합니다.
+
+![screen](/posts/img/gitlog-2.jpg)
+
+---
 
 ## 알아두면 좋은 명령어
+
+1. <br>
 
 | Command | 내용 | 
 | :----------: | :----------: |
 | git config --global user.name [user name] |   작업자 이름 설정 |
 | git config --global user.email [user email]|   작업자 이메일 설정 |
-| git config --global --list | 설정값(이름 및 메일등) 확인|
+| git config --global --list | 설정값(이름 및 메일등) 확인 |
+| git init |  git 저장소(repo) 만들기 | <br>
 
-git init                                                                git 저장소(repo) 만들기
+2. <br>
  
-﻿
-git remote add [remote name] [remote addres]  별명으로 원격지주소를 저장
-git remote rm [remote name]                             별명의 원격지를 삭제
-git remote rename [remote name] [new name]   별명을 새로운 별명으로 변경
+﻿| Command | 내용 | 
+| :----------: | :----------: |
+| git remote add [remote name] [remote addres] | 별명으로 원격지주소를 저장 |
+| git remote rm [remote name]   |   별명의 원격지를 삭제 |
+| git remote rename [remote name] [new name]  | 별명을 새로운 별명으로 변경 | 
  
-git fetch [remote name]                                     remoet의 모든 정보를 가져옴(모든 branch)
- 
-git pull                                                                저장소에서 변경 내용 가져오기
- 
-git push                                                                 commit들을 master 저장소에 저장﻿
-git push [remote name] [localbranch name] local branch의 내용을 업데이트
-git push [server] tag [TAG]                                  server에 tag 전송
-git push [server] --tags                                     변경된 모든 tag 전송
-git push [server] [L.B]:[R:B]                                server 에 local branch 를
-                                                                               -Remote branch이름으로저장
+| Command | 내용 | 
+| :----------: | :----------: |
+|git fetch [remote name]    | remoet의 모든 정보를 가져옴(모든 branch) |
+| git pull |  저장소에서 변경 내용 가져오기 |
+
+3. <br>
+
+| Command | 내용 | 
+| :----------: | :----------: | 
+| git push | commit들을 master 저장소에 저장﻿ |
+| git push [remote name] [localbranch name] |local branch의 내용을 업데이트|
+| git push [server] tag [TAG]    |                              server에 tag 전송|
+| git push [server] --tags      |                               변경된 모든 tag 전송|
+| git push [server] [L.B]:[R:B] |                               server 에 local branch 를-Remote branch이름으로저장 |
+                                                                               
  
 git tag [TAG NAME]                                              저장소에 태그를 붙인다.
 git tag                                                                  태그목록을 본다.
