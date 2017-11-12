@@ -2,7 +2,7 @@
 layout:     post
 title:      "Git, 자주사용하는 명령어를 정리해보자!"
 subtitle:   "Git의 유용한 명령어들을 모아놓았습니다."
-date:       2017-11-10 00:30:00
+date:       2017-11-12 14:44:00
 author:     "MinJun"
 header-img: "img/tags/Github-bg.jpg"
 comments: true
