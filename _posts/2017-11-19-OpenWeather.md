@@ -9,7 +9,7 @@ comments: true
 tags: [Swift]
 ---
 
-### [사용한 API(OpenWeather API)](https://openweathermap.org) <br>
+### 사용한 API [https://openweathermap.org](https://openweathermap.org) 입니다<br>
 ---
 
 ![screen](/img/posts/OpenWeather.gif)
@@ -22,7 +22,7 @@ tags: [Swift]
 
 ![screen](/img/posts/openWeather.jpg) <br>
 
-API 사용법은, `[https://openweathermap.org](https://openweathermap.org)` 가시면 확인해보실수 있습니다. 
+API 사용법은, [https://openweathermap.org](https://openweathermap.org) 가시면 확인해보실수 있습니다. 
 
 > api.openweathermap.org/data/2.5/weather?`lat=35`&`lon=139`에서 위도, 경도만 변경 해가면서 현재 위치에 대한 날씨 정보를 가져와봅니다..! 
 > 
