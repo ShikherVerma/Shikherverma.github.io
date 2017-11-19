@@ -364,7 +364,7 @@ extension MyChoiceWeatherTable: UITableViewDelegate, UITableViewDataSource{
 
 ## 여담 
 
-Network 통신을 하면서 데이터를 주고 받고, 핸들링하니까. 재미도 있고, 무엇가 계속 더 해보고싶은 욕망(?) 이 생기는것 같습니다. 만드는 동안 즐겁게 만들었던것 같습니다..! 감사합니다
+Network 통신을 하면서 데이터를 주고 받고, 핸들링하니까. 재미도 있고, 무언가 계속 더 해보고싶은 욕망(?) 이 생기는것 같습니다. 만드는 동안 즐겁게 만들었던것 같습니다..! 감사합니다
 
 ---
 
