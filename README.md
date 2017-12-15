@@ -1,7 +1,7 @@
 
 # 🐳 [devminjun.github.io](https://devminjun.github.io)
 
-![screen](/img/mainImage.jpg)
+![screen](/img/mainImage.jpg) 
 
 
 
