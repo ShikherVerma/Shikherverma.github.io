@@ -25,7 +25,6 @@ tags: [Swift]
 
 
 ```swift
-
 // class 정의
 class VideoMode {var resolution = Resolution()var interlaced = falsexvar frameRate = 0.0var name: String?}
 
@@ -40,7 +39,6 @@ var value = VideoMode()
 var value = Resolution()
 
   -> 동일하게 인스턴스를 생성합니다. 하지만, 인스턴스를 생성할때 각각의 인자를 전달하는 방식이 달라지게 됩니다. 
-
 ```
 
 
@@ -112,7 +110,6 @@ let lb:UIView = UIVIew()
 - Struct Vs Class 차이 예제 코드
 
 ```swift
-
 class Value {
     var x: Int = 0
 }
@@ -122,18 +119,13 @@ func changeValue(variable: Value) {
     otherValue.x = 100
     print(otherValue.x) // 100
 }
-
 var rootInstance: Value = Value()
 print(rootInstance.x) // 0
-
 changeValue(variable: rootInstance)
-
 print(rootInstance.x) // 100 
-
  -> 함수의 stack Frema 속에서 참조된 rootInstance.x 의 값이 변경되었다.
- 
- 
- struct NotChangeValue {
+
+struct NotChangeValue {
     var x: Int = 0
 }
 
@@ -145,14 +137,9 @@ func notChangeValue(StructVariable variable: NotChangeValue) {
 
 var rootStructInstance: NotChangeValue = NotChangeValue()
 print(rootStructInstance.x) // 0
-
 notChangeValue(StructVariable: rootStructInstance)
 print(rootStructInstance.x) // 0
-
 -> 같은 형태(?)로 정의 했는데, 결과값이 다르게 나왔다. 간단하게 설명하면 struct는 인스턴스 생성시에 값을 복사해서 인자로 전달했고, class 는 인자로 전달될때 값이 아니라, 그 값의 주소값이 전달이 되어서 위와 같은 결과를 가져온다고 할수 있다
-
-
-
 ```
 
 > 하지만 여기까지 해봐도 잘 와닿지가 않는다. 그래서 메모리 주소와, heap 의 참조하는 값을 직접 눈으로 확인해보자!
@@ -187,7 +174,6 @@ print(rootStructInstance.x) // 0
 - 메모리 주소값 비교 
 
 ```swift
-
 // Struct 정의 
 struct NotChangeValue {
     var y = 0
@@ -196,43 +182,28 @@ struct NotChangeValue {
 // Struct 인스턴스 생성  -> 인자 전달 
 var rootStructInstance = NotChangeValue(y: 10)
 var structInstance = rootStructInstance
-
-
 withUnsafePointer(to: &rootStructInstance) { Pa in print(Pa) } // 0x0000000100442218
                                              // debug_window memory addres 0x100442218
-                                                            
 withUnsafePointer(to: & structInstance) { Pa in print(Pa) } // 0x0000000100442220
                                             // debug_window memory addres 0x100442220
-
 -> `withUnsafePointer` : 메모리 주소값을 출력, 둘은 서로 다른 메모리 주소값에 정의 되어 있고, 
 -> debug_window : 통해서 서로 다른 참조를 하고 있는것을 확인할수 있습니다..
-
-
 // class 정의 
 class changeValue {
-    var x = 0
-    
+    var x = 0    
     init(x: Int) {
     self.x = x
-    
  }
-
 var rootInstance = changeValue(x: 10)
 var classInstance = rootInstance
-
 ->
-
-
 withUnsafePointer(to: & rootInstance) { Pa in print(Pa) } // 0x00000001004420e0
                                        // debug_window memory addres 0x102824af0
                                                             
 withUnsafePointer(to: & classInstance) { Pa in print(Pa) }  // 0x00000001004420e8
-                                       // debug_window memory addres 0x102824af0
-                                                            
+                                       // debug_window memory addres 0x102824af0                                                            
 -> `withUnsafePointer` : 메모리 주소값을 출력, 둘은 서로 다른 메모리 주소값에 정의 되어 있고, 
 -> debug_window : 서로 같은 heap 영역의 인스턴스를 참조하고 있는것을 확인할수 있습니다.                                                            
-
-
 ```
 
 ---

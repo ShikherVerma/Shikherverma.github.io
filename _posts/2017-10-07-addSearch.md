@@ -53,10 +53,8 @@ github blog 도 만들고, 댓글 기능도 구현 했다면, 이제는 google, 
 일단 우리의 목적은 검색 엔진에 노출 되는거니까, 세부적인 설정은 이후에 하도록 합니다.
 
 ```txt
-
 User-agent: *
 Allow: 
-
 ```
 
 1. 위의 코드를 복사해서, 자신의 github blog `root 디렉토리`에 `robots.txt`을 만들어서 복사 붙여 놓기를 합니다

@@ -87,7 +87,6 @@ true, false
 
 
 ```swift
-
 var floatNum: Float = 0.1
 var floatNum1: Float = 0.1
 
@@ -99,8 +98,6 @@ print(doubleNum * doubleNum1) // 0.01
 
 dump(floatNum * floatNum1) // 0.0100000007
 dump(doubleNum * doubleNum1) // 0.010000000000000002
-
-
 ```
 
 > Float, Double 형의 차이는 '정밀도'의 범위이다. 예제로 확인해보자
@@ -122,12 +119,8 @@ dump(doubleNum * doubleNum1) // 0.010000000000000002
 
 
 ```swift
-
 var anyValue: Any = 10
-
 var intValue: Int = anyValue as! Int
-
-
 ```
 
 > Any 타입의 값을 Int 타입으로 넓으려고 하니까 다운 캐스팅하라고, 컴파일리 알려준다..! 
@@ -136,27 +129,18 @@ var intValue: Int = anyValue as! Int
 - AnyObject : 모든 클레스 타입을 지칭하는 프로토콜(AnyObject는 클레스의 인스턴스만 넣을수 있다.)
 
 ```swift
-
 class testAnyObject { }
 var anyObjects: AnyObject = testAnyObject()
-
-
 var someObject: testAnyObject = anyObjects as! testAnyObject
-
 ```
 
 - nil : 없음을 의미한다
 
 ```swift
-
 var nilValue: Int?
-
 print(nilValue) // nil 이 가능하지만, 아래의 부분에서는 컴파일 오류가 발생한다.
-
 var nilValue = nil 
-
 // nil 을 할당하면, 컴파일 오류가 난다
-
 ```
 
 > 스트링, 인트, 더블 등등 타입들을 사실 구조체로 되어 있다.
@@ -171,18 +155,13 @@ var nilValue = nil
 - Array
  
 ```swift
-
 기본적으로 Array의 정의는 
-
 var integers: Array<Int> = Array<Int>() 
  -> 인스턴스를 정의하는것!
-
 var doubles: Array<Double> = [Double]()
  -> 축약을 사용해서 정의 할수 있다.
- 
 var doubles: Array<Double> = []
  -> 빈 어레이를 정의할때.
-
 ```
 
 - Dictionary : 키와 값이 쌍으로 이루어진 collection type
@@ -192,19 +171,12 @@ var doubles: Array<Double> = []
 
 
 ```swift
-
 // 딕셔너리 정의하기 
 var anyDictionary: Dictionary<String, Any> = [String: Any]()
-
-
 // 딕셔너리 응용 
 var dic: [[String:String]] = [["id" : "민준","password": "123"]]
-
 print(dic[0]["id"],dic[0]["password"])
-
 // dictionary 를 내가 원하는 형식으로 사용하기 위해서는 이런식으로 만들어서 사용해도 괜찮을것 같다.
-
-
 ```
 
 > 딕셔너리는 순차적이지 않음, 그냥 키와 값의 타입으로만 되어 있다. 
@@ -215,50 +187,32 @@ print(dic[0]["id"],dic[0]["password"])
 
 
 ```swift
-
 Set 응용
-
 var setValue: Set<Int> = Set<Int>()
 var setValue1: Set<Int> = Set<Int>()
-
 setValue = [40,10,20,40]
 setValue1 = [50,50,10,10]
-
 print(setValue, setValue1) // 40, 10, 20   50, 10
-
 //set 의 값을 합쳐주고, sorted 로 정렬해준다!
 var setUnion = setValue.union(setValue1).sorted()
-
 print(setUnion) // 10, 20, 40, 50
-
-
 ```
-
- 
  
 ---
 
 ## 6. 함수 기본
 
-
-
 - 반환 값이 없는 함수 
 
 ```swift
-func 함수이름(매개변수이름: 매개변수타입) -> Void {
-
-
-	return 
+func 함수이름(매개변수이름: 매개변수타입) -> Void {	return 
 	}                         
 
 func notReturnValue(value: Int = 0 )  {
-    
     print("아무것도 없음")
     return
 }
-
 notReturnValue()
-
 ```
 
 > 나에게 필요한 것만 정리하자 
@@ -271,12 +225,9 @@ notReturnValue()
 **전달인자 레이블을 사용하면 중복 정의를 사용할수 있음. greeting 이라는 함수 이름이라는 함수를 되었다고 생각될수 있지만, 사실은 레이블이 포함된 이름을 사용하기 때문에, 레이블을 잘 사용하면 전달 인자의 역활도 나눌수 있고, 잘 사용할수 있음.**
 
 ```swift
-
-
 func greeting(xValue x: Int) {
     print("x값 출력")
 }
-
 
 func greeting(yValue y: Int) {
     print("y값 출력")
@@ -285,23 +236,17 @@ func greeting(yValue y: Int) {
 
 각각 함수 이름은 같지만, 정의가 가능하다. swift는 함수형 패러다임을 가지고 있어서, 함수의 이름만 가지고 정의 하는것이 아니라, 함수의 레이블 이름까지 포함된 이름을 함수 이름으로 정의 할수 있다. 그래서 같은 이름의 함수를 호출 하는것 같지만, 사실을 다른이름의 함수를 호출하는것 이다!
 
-
  -> 기본적으로 swift는 매서드 오버라이드가 안됩니다.(같은 이름 정의를 하면 덮어 씌우는게 아니라, 컴파일 에러가 난다)
-
 ```
 
 - 가변 매개 변수
 
 ```swift
-
 func parameter(y: Int...) {
-    
     for i in y {
         print(i)
     }
-    
 }
-
 ```
 
 > 가변인자를 사용하게 되면 ,y 는 Array 형태로 값이 묶여러 들어간다. 그래서 그 값을 사용하기 위해서 반복문을 사용해서 각각의 값들을 뜯어서 사용해줄수 있다.
@@ -318,11 +263,8 @@ func parameter(y: Int...) {
 - if-else ,switch 
 
 ```swift
-
 switch 케이스에서는, 디폴트가 없으면 
-
 var num = 1
-
 switch num {
 case 1:
     print("1입니다") 
@@ -337,9 +279,7 @@ default:
     print("마지막 입니다")
 
 }
-
 위의 switch 구문을 실행하기 되면 "1입니다" 프린트후, "2입니다" 까지 자동으로 프린트 하게된다!
-
 ```
 
 > switch 구문에서 에서는 `fallthrough` 를 사용하면, 어떤 조건이 걸리고 난 이후에, 다음 구문을 실행 시킬수 있다.
@@ -361,13 +301,10 @@ default:
 - 옵셔널은 열거형과 재네릭 형의 합작품이다. `Optional = enum + general` 
 
 ```swift 
-
 enum Optional<Wrapped> : ExpressibleByNillLiteral {
 	case none
 	case some(Wrapped)
 }
-
-
 ```
 
 > 옵셔널은 이렇게 정의가 되어 있다. 사실 우리가 옵셔널을 사용하게 되었을때 값이 없으면 enum 의 none 부분에 할당되게 되고, 값이 있을때 some부분에 할당 되게 된다.
@@ -383,28 +320,21 @@ let optionalValue: Int? = nil
 
 
 옵셔널은 !, ? 로 표현할수 있음.
-
 ```
 
 - implicitly Unwrapped Optional(암시적 추출 옵셔널)
 
 ```swift
-
 var optionalValue: Int! = 100
-
 switch optionalValue {
 case .none:
 	print("값이 없음")
 case .some(let value): 
 	print(" \(value) 값이 있음")
-
 옵셔널은 Enum(열거형) 이라서, 이렇게 값이 있는지 없는지를 switch 케이스로 확인할수 있다.
-
 ```
 
 > 열거형의 값을 뽑을때 옵셔널 바인딩을 해주어야함. 이유는 바인딩을 하지 않으면 nil의 가능성이 있다는것을 내포하기 때문에, 크러쉬가 날수도 잇다.
-
-
 
 - '!' : 옵셔널을 사용하면, 일반 변수처럼 nil 을 넣을수도 있는데, 이때 nil과, 다른 타입과 연산을 하게 되면, 크러쉬가 난다..
 
@@ -426,17 +356,14 @@ if let, guard let 을 사용해서 옵셔널을 바인딩해서 사용할수 있
 
 
 ```swift
-
 // 여러값의 옵셔널을 바인딩 해줄수 있음.
 if-let 변수 = 해당옵셔널 변수, let 바인딩변수 = 해당 옵셔널 변수 { 
 	옵셔널 바인딩이후 실행시킬 코드
 }else {
    print("값이 nil 일떄 실행")
   }
-  
 guard let 
 -> guard let 의 구문을 함수안에서 사용하면, 함수 내부의 스코프에서 계속 살아 있기 때문에, if let 보다 강력하게 사용할수 있다.
-
 ```
 
 
@@ -457,71 +384,50 @@ guard let
 
 ```swift
 struct 이름 {
-	구현부
-	
-	
+	구현부	
 	}
 	
-	//구조체 정의
+//구조체 정의
 struct Sample {
     var mutableProperty: Int = 100
-    let immutableProperty: Int = 100
-    
+    let immutableProperty: Int = 100    
     var `class`: Int = 100
     
     static var typeProperty: Int = 100
-    
     //인스턴스 메서드
     func instanceMethod() {
         print("instanceMethod")
-        
     }
     
     // 타입 메서드
     static func typeMethod() {
         print("typeMethod")
     }
-    
-    
 }
 
 // 구조체 인스턴스 정의
 var mutable: Sample = Sample()
-
 mutable.mutableProperty = 200
 // 애초에 값 변경이 안됨..mutable.immutableProperty = 300
-
-
 // struct 자체에 접근해서 변경할수 있는 값임.. static
 Sample.typeProperty = 300
-
 print(Sample.typeProperty)
-
 dump(mutable)
-
 mutable.class = 100
-
 print(mutable)
-
 ```
 
 > 구조체에서는 내부에 함수를 만들면, 그것이 인스턴스가 됨. struct 안에서 static 을 정의하면, struct 안에서만 사용할수 있는 property 가됨.
 > 
 > 시스템 예약어를 변수 이름 으로 사용하려면 `class` 를 사용해서 정의할수 있음.
 
-
-
-
 **구조체는 값 타입이고, 클래스는 참조 타입니다. CallByValue, CallByReference 편 참조 하자**
-
-
 
 ---
 
 ## 10. class(클레스)
 
 **swift 의 class 는 다중상속을 지원 하지 않는다.**
-
 
 - 타입 메서드 : static, class -> class 내부에서 정의 가능 
 	- 상속을 받았을때, 재정의 불가 타입 메서드 static 	- 상속을 받았을때 재정의 가능 타입 매서드 class
@@ -530,29 +436,23 @@ print(mutable)
 
 ## 11. Enum(열거형)
 
-**스위프트의 열거형은, 다른 언어의 열거형과 다르게 swift에서 강력함.**
-
+**스위프트의 열거형은, 다른 언어의 열거형과 다르게 swift에서 강력함.**<br>
 **각각의 케이스가 값으로 취급이 된다**
-
 
 - Enum 정의
 
 ```swift
-
 enum 이름 {
 	case 이름1
 	case 이름2
 	// 각각 하나씩 넣어도 되고, 이렇게 연속적으로 넣어두됨.
 	case 이름3, 이름4, 이름5,
 	...
-	
 	enum Fruit: Int {
 	case apple = 0
 	case grape = 1
 	case peach 
-
 }
-
 ```
 
 > 원시값은 Hashable 프로토콜을 따르는 모든 타입이 원시값의 타입으로 지정될 수 있습니다.
@@ -565,57 +465,37 @@ enum 이름 {
 - rawValue(원시값)
 
 ```swift
-
 표현 문법, 열거형은 케이스 자체가 하나의 값으로 인식이된다!
-
 enum WeekDay {
     case mon
     case tue
-    
     // 위처럼 하나씩 정의 해줘도 되지만 아래 처럼 ',' 를 이용해서 여러개를 정의 할수 있다.
-    
     case wed, fri
 }
 
 var x: WeekDay = WeekDay.fri
-
 x = .fri
-
-//print(x)
-
-
-
 // 원시값을 넣으면, 자동으로 원시값을 넣지 않은 곳에 값이 순차적으로 들어감.
 enum Friut: Int {
     case apple = 0
     case grape = 20
     case a          // 21
     case b          // 22
-    
 }
-
 print(Friut.a.rawValue) // 21
-
 // rawValue 값 자체가 index 가 되는것 같음..
-
 var y: Friut! = Friut(rawValue: 0)
-
 print(y) // apple -> 이 값은 옵셔널이다!
-
-
 ```
 
 - Enum 응용
 
 ```swift
-
 enum WeekDay1 {
     case mon
     case tue
     case wed, fri
-    
     func printWeekDay1(){
-        
         switch self {
         case .mon:
             print("\(self) 입니다")
@@ -625,24 +505,16 @@ enum WeekDay1 {
             print("\(self) 입니다")
         case .fri:
             print("\(self) 입니다")
-            
         }
-        
-        
     }
 }
-
 // 이런식으로 enum 안에서 넣은 값을 처리해줄수도 있다.
 WeekDay1.fri.printWeekDay1() // "fri 입니다"
-
-
-
 ```
 
 ---
 
 ## 12. call by Value, call by reference(값 타입과, 참조 타입)
-
 
 - Class 
 	- 전통적인 OOP 관점에서 클래스
@@ -672,7 +544,6 @@ WeekDay1.fri.printWeekDay1() // "fri 입니다"
 	- 열거형 자체가 하나의 데이터 타입, 열거형의 case 하나하나 전부 하나의 유의미한 값으로 취급
 
 
-
 | * |Class | Stuct | Enum |
 | :------------ | :-----------: | :-----------: | -----------: |
 | type | Reference | Value | Value |
@@ -689,53 +560,36 @@ WeekDay1.fri.printWeekDay1() // "fri 입니다"
 
  -> 구조체는 어떤 유의미한 값들을 연속적으로 핸들링 해야할때 사용하면 좋다. 
  
- 
-
 - Call By Value, Call By Reference 차이를 정확하게 알수 있는 예제
 
 ```swift
-
 // 값 타입
 struct CallValue {
     var n: String = "1"
 }
 
-/ 참조 타입 
+// 참조 타입 
 class CallReference {
-    var n: Int = 10
-    
+    var n: Int = 10   
 }
 
 var tester: CallValue = CallValue()
-
-
 func CheckValue(x: CallValue) {
-    
     var testValue = x
     testValue.n = "100"
 }
 
 // 값 타입은 인자를 전달할때, '값' 만 복사하여 전달 해준다. 그래서 전달 되어진 인자 자체의 값이 변하지는 않는다. 
 CheckValue(x: tester)
-
 print(tester.n) // 10
-
-
-
-func CheckReference(x: CallReference) {
-    
+func CheckReference(x: CallReference) {    
     var testReference = x
     testReference.n = 100
 }
-
 var tester1: CallReference = CallReference()
-
 CheckReference(x: tester1)
-
 // 참조 타입이 인자로 전달되어 질때는, 값이 아닌 그 객체의 주소(ID) 그 자체가 전달이 되기 때문에, 전달 되어진 값이 변할때, 전달되어지기 이전의 값도 변하게 되는것입니다..!
-
 print(tester1.n) // 100, inout 을 사용하지 않았는데, 값이 변햇다.
-
 ```
 
 > Data types in Swift
@@ -753,8 +607,7 @@ print(tester1.n) // 100, inout 을 사용하지 않았는데, 값이 변햇다.
 ```swift
 { (매개변수 목록) -> 반환 타입 in 
 	실행코드
-	}
-	
+	}	
 ```
 	
 > 함수는 클로져의 일종 이기때문에, 클로져로 만들것 자체를 인자로 저장, 전달 할수 있다.
@@ -764,36 +617,21 @@ print(tester1.n) // 100, inout 을 사용하지 않았는데, 값이 변햇다.
 - clousre 설계
 
 ```swift
-
-
 func account(name: String, money: Int) -> (Int) -> Int {
     let myName = name
-    var myMoney = money
-    
+    var myMoney = money    
     func addMoney(m:Int) -> Int{
-        
         myMoney += m
         print(myName, myMoney)
         return myMoney
     }
-    
     return addMoney(m:)
-    
 }
 
 var test = account(name: "민준", money: 1000)
-//dump(test)
-
-
-
-for i in 1...100 {
-    
+for i in 1...100 {    
     test(100)
-    
 }
-
-
-
 ```
 
 ---
@@ -810,19 +648,14 @@ for i in 1...100 {
 - 후행 클로져
 
 ```swift
-
 // 변수들에 클로져를 정의 할수 있다.
 let add: (Int, Int) -> Int
-
 add = { (a:Int, b:Int) in
     return a+b
 }
-
-func calAdd(x: Int, y:Int, Method: (Int, Int) -> Int) -> Int {
-    
+func calAdd(x: Int, y:Int, Method: (Int, Int) -> Int) -> Int {   
     return Method(x,y)
 }
-
 
 // 변수 안에서 클로져가 선언될때, 후행 클로져로서 앞의 두 인자를 받아서, 인트 타입을 반환 한다는 의미로서 정의 해줄수 있다.
 
@@ -831,7 +664,6 @@ var testClosure = calAdd(x: 10, y: 20) { (left: Int, right: Int) -> Int in
 }
 
 dump(testClosure)
-
 ```
 
 - 반환 타입을 생략 해줄수 있다.
@@ -840,29 +672,22 @@ dump(testClosure)
 > 
 
 ```swift
-
-
 //인자 목록을 생략해줄수 있다. 생략이 가능한이유는, 이미 앞에서 인자 두개를 받는다는것을 알고 있기 때문이다..!
 var testClosure = calAdd(x: 10, y: 20, Method: {
     return $0 * $1
 })
-    
 dump(testClosure)
-
 잘 보면, 변수에 () 정의 안에 클로져 까지 집어 넣었다.
 ```
 
 - 당연히 후행 클로저와 함께 사용할 수 있다.
 
 ```swift
-
 //인자 목록을 생략해줄수 있다. 생략이 가능한이유는, 이미 앞에서 인자 두개를 받는다는것을 알고 있기 때문이다..!
 var testClosure = calAdd(x: 10, y: 20){
     return $0 * $1
 }
-    
 dump(testClosure)
-
 ```
 
 
@@ -874,11 +699,8 @@ dump(testClosure)
 
 
 ```swift
-
 이런식으로 반환 값을 축약할수 있음. 클로져에서는 마지막 줄의 값을 암시적으로 반환값을 취급을 한다..!!
 var testClosure = calAdd(x: 10, y: 20){ $0 * $1 }
-
-
 ```
 
 ---

@@ -42,9 +42,7 @@ Selenium은 webdriver라는 것을 통해 디바이스에 설치된 브라우저
 Selenium은 webdriver api를 통해서 브라우저를 제어 합니다. 우선 webdriver를 import를 해줍니다.
 
 ```python
-
 import os
-
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC 
@@ -68,10 +66,6 @@ driver.find_element_by_name('pw').send_keys('password')
 # 로그인 버튼을 클릭 해줍니다.
 
 driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
-
-
-
-
 ```
 
  - 네이버 접속 화면(위의 URL 을 한번 확인해 보자.)
@@ -90,14 +84,12 @@ driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
 
 
 ```python
-
 import os
 import time
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC 
 from selenium.webdriver.common.by import By
-
 
 driver = webdriver.Chrome()
 driver.get("https://www.naver.co.kr/")
@@ -129,16 +121,6 @@ while btn < 100 :
     
     # 새로운 검색창 검색값 id = bt_search
     ff_driver.find_element_by_class_name("bt_search").click()
-
-
 ```
 
 > 원리는, 약 10초씩 같은 이름을 검색하게 만들었습니다. 사실 이렇게 사용하면, 같은 이름을 검색해서 robot 필터에 걸립니다... 피하는 방법에 대해서 자세하게 적고 싶지만.. 뭔가 적으면 안될것 같은(?) 생각에 작성하지는 않았습니다. 조금만 고민 하면서 사용하면, Selenium은 막강한 도구가 될것 같습니다..! 
-
-
-
-
-
-
-
-

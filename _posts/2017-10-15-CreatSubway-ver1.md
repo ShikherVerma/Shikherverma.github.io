@@ -45,18 +45,15 @@ import UIKit {
 class ViewController: UIViewController, UIScrollViewDelegate {
     var scrollView: UIScrollView!
     var imageView: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // 이미지, 스크롤뷰 생성 
         let frameSize = view.bounds.size
         scrollView = UIScrollView(frame: CGRect(origin: CGPoint.zero, size: frameSize))
-        
         // 이미지 생성, 스크롤뷰의 컨텐츠 사이즈는, 이미지뷰의 사이즈로 정함
         let image = UIImage(named: "deagu.jpeg")
         imageView = UIImageView(image: image)
         scrollView.contentSize = imageView.bounds.size
-        
         //view 에 뿌려주기
         scrollView.addSubview(imageView)
         view.addSubview(scrollView)
@@ -561,7 +558,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 self.startStation = ""
                 print("출발역이 리셋되었습니다. 현재 출발역은 \(self.startStation)")
             })
-            
             
             // 3. 알럿액션을 알럿 컨트롤러에 연결
             popAlert.addAction(okAlertAction)
