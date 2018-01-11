@@ -33,11 +33,8 @@ tags: [Swift]
 - 기존(Part 1)
 
 ```swift
-
 import UIKit
-
 class ViewController: UIViewController, UIScrollViewDelegate {
-    
    /*==========================
           역마다 버튼 만들기
     ==========================*/
@@ -72,8 +69,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     // 스타트 역의 tag 값을 가져온다
     var getStartStionTag = 0
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         /*==========================
@@ -99,37 +95,32 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         daeguBank = UIButton()
         beomeo = UIButton()
         
-        
         /*=======================
                  각 버튼 위치
          ========================*/
+			yeungNamHosp.frame = CGRect(x: 465, y: 430, width: 20, height: 20)
+        univOfEduc.frame = CGRect(x: 486, y: 410, width: 20, height: 20)
+        myeongDeok.frame = CGRect(x: 515, y: 380, width: 20, height: 20)
         
-        yeungNamHosp = UIButton(frame: CGRect(x: 465, y: 430, width: 20, height: 20))
-        univOfEduc = UIButton(frame: CGRect(x: 486, y: 410, width: 20, height: 20))
-        myeongDeok = UIButton(frame: CGRect(x: 515, y: 380, width: 20, height: 20))
+        // 환승역
+        banWorlDang.frame = CGRect(x: 575, y: 320, width: 20, height: 20)
         
-                // 환승역
-        banWorlDang = UIButton(frame: CGRect(x: 575, y: 320, width: 20, height: 20))
+        jungangno.frame = CGRect(x: 610, y: 290, width: 20, height: 20)
+        daeguStation.frame = CGRect(x: 640, y: 265, width: 20, height: 20)
+        chilseongMarket.frame = CGRect(x: 690, y: 265, width: 20, height: 20)
         
-        jungangno = UIButton(frame: CGRect(x: 610, y: 290, width: 20, height: 20))
-        daeguStation = UIButton(frame: CGRect(x: 640, y: 265, width: 20, height: 20))
-        chilseongMarket = UIButton(frame: CGRect(x: 690, y: 265, width: 20, height: 20))
+        // 2호선
+        neaDang.frame = CGRect(x: 430, y: 320, width: 20, height: 20)
+        bangogae.frame = CGRect(x: 475, y: 320, width: 20, height: 20)
+        sinNam.frame = CGRect(x: 545, y: 320, width: 20, height: 20)
         
-               // 2호선
-        neaDang = UIButton(frame: CGRect(x: 430, y: 320, width: 20, height: 20))
-        bangogae = UIButton(frame: CGRect(x: 475, y: 320, width: 20, height: 20))
-        sinNam = UIButton(frame: CGRect(x: 545, y: 320, width: 20, height: 20))
+        kyungDeaHosp.frame = CGRect(x: 640, y: 320, width: 20, height: 20)
+        daeguBank.frame = CGRect(x: 680, y: 320, width: 20, height: 20)
+        beomeo.frame = CGRect(x: 730, y: 320, width: 20, height: 20)
         
-        kyungDeaHosp = UIButton(frame: CGRect(x: 640, y: 320, width: 20, height: 20))
-        daeguBank = UIButton(frame: CGRect(x: 680, y: 320, width: 20, height: 20))
-        beomeo = UIButton(frame: CGRect(x: 730, y: 320, width: 20, height: 20))
-        
-
-
         /*==========================
                버튼 색상, 곡률 지정
          ==========================*/
-
         yeungNamHosp.backgroundColor = UIColor.clear
         yeungNamHosp.layer.cornerRadius = 10
 
@@ -142,8 +133,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // 환승역
         banWorlDang.backgroundColor = UIColor.clear
         banWorlDang.layer.cornerRadius = 10
-
-        
         jungangno.backgroundColor = UIColor.clear
         jungangno.layer.cornerRadius = 10
 
@@ -171,13 +160,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
         beomeo.backgroundColor = UIColor.clear
         beomeo.layer.cornerRadius = 10
-
-
-
+        
         /*=======================
              버튼 imageView 에 추가.
          ========================*/
-
         imageView.addSubview(yeungNamHosp)
         imageView.addSubview(univOfEduc)
         imageView.addSubview(myeongDeok)
@@ -196,26 +182,20 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         imageView.addSubview(daeguBank)
         imageView.addSubview(beomeo)
         
-        
         /*=======================
              버튼 기능 연결
          ========================*/
-        
         yeungNamHosp.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
         univOfEduc.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
         myeongDeok.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
-        
         // 환승역
         banWorlDang.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
-        
         jungangno.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
         daeguStation.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
         chilseongMarket.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
-        
         neaDang.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
         bangogae.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
         sinNam.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
-        
         kyungDeaHosp.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
         daeguBank.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
         beomeo.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
@@ -223,21 +203,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         /*=======================
               역 이름 한글 지정
          ========================*/
-        
         yeungNamHosp.titleLabel?.text = "영대병원"
         univOfEduc.titleLabel?.text = "교대"
         myeongDeok.titleLabel?.text = "명덕"
-        
         banWorlDang.titleLabel?.text = "반월당"
-        
         jungangno.titleLabel?.text = "중앙로"
         daeguStation.titleLabel?.text = "대구역"
         chilseongMarket.titleLabel?.text = "칠성시장"
-        
         neaDang.titleLabel?.text = "내당"
         bangogae.titleLabel?.text = "반고개"
         sinNam.titleLabel?.text = "신남"
-        
         kyungDeaHosp.titleLabel?.text = "경대병원"
         daeguBank.titleLabel?.text = "대구은행"
         beomeo.titleLabel?.text = "범어"
@@ -245,48 +220,35 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         /*=======================
                  tag 값 설정
          ========================*/
-        
         yeungNamHosp.tag = 3
         univOfEduc.tag = 2
         myeongDeok.tag = 1
-        
         // 환승역
         banWorlDang.tag = 0
-        
         jungangno.tag = 1
         daeguStation.tag = 2
         chilseongMarket.tag = 3
-        
         // 2호선
         neaDang.tag = 3
         bangogae.tag = 2
         sinNam.tag = 1
-        
         kyungDeaHosp.tag = 1
         daeguBank.tag = 2
         beomeo.tag = 3
-    
-        
     }
-
-
 ```
 
 - 변경후
-
 
 | 기존 | 변경후 |
 | :------------ | -----------: | 
 | ![screen](/img/posts/beforeSubway.jpg) | ![screen](/img/posts/beforeSubway-1.jpg) |
 
-
 - data.swift 부분 
 
 
 ```swift
-
 import UIKit
-
 struct Station{
     var name: String
     var x: Int
@@ -407,8 +369,6 @@ struct Station{
             (sn.index(of: "수성구청")!,3)])
     ]
 }
-
-
 ```
 
 > 구조체를 사용해서, 추가, 삭제 에 대해서 조금더 자유롭게 할수 있게 만들었습니다. 각 역 버튼 생성시, 구조체의 인덱스 번호로 tag 가 생성되고, tag 값을 통해서 각 역에 접근 할수 있습니다. 
@@ -420,59 +380,42 @@ struct Station{
 - Viewdidload 부분 
 
 ```swift
-
-
 import UIKit
-
 class ViewController: UIViewController, UIScrollViewDelegate {
     var scrollView: UIScrollView!
     var imageView: UIImageView!
     
     // 지하철 역버튼 
     var stationBtns: [UIButton]!
-    
     var btn: UIButton!
     
     // 버튼 클릭 횟수
     var clickBtn = 0
     
-	
    // 출발, 도착역에 대한 Tag값 
     var startStationTag = -1
     var arrivalStationTag = -1
     
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         let frameSize = view.bounds.size
         scrollView = UIScrollView(frame: CGRect(origin: CGPoint.zero, size: frameSize))
-        
         let image = UIImage(named: "deagu.jpeg")
         imageView = UIImageView(image: image)
         scrollView.contentSize = imageView.bounds.size
-        
-        
         //view 에 뿌려주기
-        
         scrollView.addSubview(imageView)
         view.addSubview(scrollView)
-
-        
-      
         
         /*==========================
                   btn 만들기
-              각 버튼 위치
- 		버튼 색상, 곡률 지정  
-    버튼 imageView 에 추가.
-      		버튼 기능 연결
-	    역 이름 한글 지정
-   			tag 값 설정
+            		  각 버튼 위치
+	 					버튼 색상, 곡률 지정  
+	  			  버튼 imageView 에 추가.
+     			 		버튼 기능 연결
+				    역 이름 한글 지정
+   					tag 값 설정
          ========================*/
-        
         //stationBtns = Array(repeatElement(UIButton(), count: Station.stations.count))
         stationBtns = []
         for i in 0..<Station.stations.count {
@@ -484,13 +427,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             stationBtns[i].addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
             stationBtns[i].titleLabel?.text = Station.stations[i].name
             stationBtns[i].tag = i
-            
             print(stationBtns[i].titleLabel?.text, stationBtns[i].tag)
         }
-
-               
-        
-
 ```
 
 > 위의 코드를 사용해서, 버튼 생성, 버튼 색상 정의, 코너값 지정, add SubView, addTarget, titleLable, tag 값 설정을 해주었습니다.
@@ -503,17 +441,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 
 ```swift
-
 ** 버튼의 기능부 입니다 **
 ** 기존에 if else -> switch 구문으로 변경 했습니다 **
-
 @objc func btnAction(_ sender: UIButton) {
-        
         let station = Station.stations[sender.tag]
-        
         switch clickBtn {
         case 0:
-            
             /*=======================
              출발역 알럿
              ========================*/
@@ -522,8 +455,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             /*=======================
              OK 누르면 출발역 설정
              ========================*/
-            let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                
+            let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in 
                 // 전역 변수에 출발역 설정
                 self.startStationTag = sender.tag
                 self.clickBtn += 1
@@ -534,7 +466,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
              cancle 버튼 누르면 출발역 재설정
              ========================*/
             let cancelAlertAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .default, handler: { _ in })
-            
             /*=======================
              alert 액션 설정
              ========================*/
@@ -544,16 +475,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             /*=======================
              alert 을 뷰에 뿌려줌
              ========================*/
-            
             self.present(popAlert, animated: true, completion: nil)
-            
             
             /*=======================
              도착역 설정 구간, 여기가 핵심(출발역 -> 도착역 알고리즘 적용)
              ========================*/
-            
         case 1:
-            
             print("도착역을 설정 해주세요 ")
             
             /*=======================
@@ -561,49 +488,31 @@ class ViewController: UIViewController, UIScrollViewDelegate {
              ========================*/
             let popAlert: UIAlertController = UIAlertController(title: "도착 역 은", message: "\(station.name) 입니다", preferredStyle: .alert)
             
-            
             /*=======================
              도착역 OK 버튼 누르면 예상 시간 반환
              ========================*/
-            let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                
+            let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in    
                 // 도착역 전역변수에 지정
                 self.arrivalStationTag = sender.tag
                 print("출발역은 \(Station.stations[self.startStationTag].name), 도착역은 \(Station.stations[self.arrivalStationTag].name) " )
-                
-                
                 // 다익스트라
                 // 각 역별로 출, 도착 시간을 계산할 표를 만듭니다.
                 var calcTable: [(sIndex: Int, timeSum: Int)] = []
                 for i in 0..<Station.stations.count {
                     calcTable.append((i,Int.max))
                 }
-                
-                
-                
-                //startStationTag
-                //arrivalStationTag
-                
-                //var currentTag
-                
                 // 다음역을 계산하기 위해서, 다음역 tag값을 지정하기 위한 변수를 선언 합니다.
                 var nextStationTag: Int? = self.startStationTag
-                
                 // 환승역 구간같이 여러 갈래가 있는 역에서 반복 연산을 하지 않기 위해서, 이미 접근한 역의 tag 값을 넣습니다. 
                 var dicAlreadyCheckStations: [Int] = []
-                
             		// 시작점의 시간은 0 으로 둡니다(이유는, 현재 이 코드의 한계점 때문입니다. 한계점은 뒤에서 설명 하겠습니다)
                 calcTable[nextStationTag!].timeSum = 0
-                
-                
-                
                 while nextStationTag != nil {
                     //다음역
                     let station = Station.stations[nextStationTag!]
                     let currentStationTime = calcTable[nextStationTag!].timeSum
                     //station을 방문했다고 체크
                     dicAlreadyCheckStations.append(nextStationTag!)
-                    
                     // 현재역 -> 다음역 까지 걸리는 시간을 위의 calcTable 에 연산후 작성합니다.
                     for stationTime in station.stationTimes {
                         let ssIndex = stationTime.sIndex
@@ -612,77 +521,52 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                             calcTable[ssIndex].timeSum = calcTimeSum
                         }
                     }
-                    
                     // 모든역을 방문 하고, 다음역이 더이상 없다면 while 구문을 종료합니다. 
                     nextStationTag = nil
-                    
                     var minTime = Int.max // 시작역과 가장 가까운 역의 걸리는 시간 저장
                     for calcTableItem in calcTable { //모든 역 비교
                         print(dicAlreadyCheckStations)
-                        
                         //방문한적이 없으면서 시작역과 가장 가까우면(시간)
                         if !dicAlreadyCheckStations.contains(calcTableItem.sIndex) && 
                             minTime > calcTableItem.timeSum { 
-                            
                             // 연산할 다음역의 sIndex 지정, 
                             nextStationTag = calcTableItem.sIndex 
-                            
                             //시작역과 가장 가까우면(시간)
                             minTime = calcTableItem.timeSum 
                         }
                     }
-                  
-                 
                 }
-                
                 let popAlert: UIAlertController = UIAlertController(title: "총 \(calcTable[self.arrivalStationTag].timeSum) 분 소요 됩니다", message:"" , preferredStyle: .alert)
-
                 let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-
                     // 모두 리셋
                     self.startStationTag = -1
                     self.arrivalStationTag = -1
                     self.clickBtn = 0
-
                 })
-                
                 
                 /*=======================
                  결과 알럿 출력
                  ========================*/
                 popAlert.addAction(okAlertAction)
                 self.present(popAlert, animated: true, completion: nil)
-                
             })
             ///////////////////////위까지 okAlert 범위
-            
             // 도착역 재설정
             let cancelAlertAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .default, handler: { _ in })
-            
             // 출발역  재설정
             let resetStartStation: UIAlertAction = UIAlertAction(title: "ResetStatstation", style: .default, handler: { (alert) in
                 self.clickBtn = 0
                 self.startStationTag = -1
             })
-            
-            
             // 3. 알럿액션을 알럿 컨트롤러에 연결
             popAlert.addAction(okAlertAction)
             popAlert.addAction(cancelAlertAction)
             popAlert.addAction(resetStartStation)
-            
             // 4. 알럿 뿌려주기
-            
             self.present(popAlert, animated: true, completion: nil)
-            
         default: break
         }
-        
-        
     }
-
-
-
 ```
 
 > 도착역을 지정 했을때 연산하는 과정 이외의 부분은 Part 1 이랑 동일 합니다.
@@ -696,34 +580,21 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 
 ```swift
-
     @objc func tapToZoom(_ gestureRecognizer: UIGestureRecognizer) {
-  
         // 더블탭 간단 하게 구현
         if scrollView.zoomScale == CGFloat(1) {
-            
-            
             // 해당 화면의 X,Y 좌표를 이용해서 확대후, 확대 이전의 좌표값 과 연산을 통해서 그 위치로 이동..
             let locationX = gestureRecognizer.location(in: scrollView).x*2.95-90
             let locationY = gestureRecognizer.location(in: scrollView).y*2.95-300
-
             scrollView.setZoomScale(3, animated: true)
-            
             scrollView.setContentOffset(CGPoint(x: locationX, y: locationY), animated: true)
         }else {
-            
             let locationX = gestureRecognizer.location(in: scrollView).x/2.95-200
             let locationY = gestureRecognizer.location(in: scrollView).y/2.95-250
             scrollView.setZoomScale(1, animated: true)
-
             scrollView.setContentOffset(CGPoint(x: locationX, y: locationY), animated: true)
         }
-        
     }
-
-
-
-
 ```
 
 > 엄밀하게 이야기하면 더블탭시 해당 위치로 가는것이 아니라 눈속임(?)을 합니다.. 더블 탭한 해당 위치로 확대 되는것이 아니라 해당 x,y 값을 연산후, 수십번의 삽질(?) 계산을 통해서 대강 비슷한 위치로 이동하게 만들었습니다. 그래서 디버깅모드로 보면 위치가 말끔하게 촤~악 가는게 아니라, 확대 되고 -> 약간의 움직임이 있습니다...ㅠ_ㅠ 
