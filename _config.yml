@@ -14,14 +14,14 @@ feedburner_url: https://feedburner.google.com/fb/a/mailverify?uri=programmer-wan
 
 # footer details. Deleting the value would remove it from footer.
 github_username:  shikherverma
-facebook_username:  shikherverma42
+facebook_username:
 email: root@shikherverma.com
-stackoverflow_username: 6764571/shikher-verma
+stackoverflow_username:
 twitter_username : shikherverma42
 linkedin_username : shikherverma42
-keybase_username : shikherverma
+keybase_username :
 copyright_name: Shikher Verma
-rss : true
+rss : false
 
 # used for portfolio on home page
 collections:
